@@ -6,51 +6,90 @@
     <title>랜덤 문제은행</title>
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin-top: 20px; }
-        .question-container { border: 1px solid #ddd; padding: 20px; max-width: 600px; margin: 0 auto; border-radius: 5px; }
+        .question-container, .result-container { border: 1px solid #ddd; padding: 20px; max-width: 600px; margin: 0 auto; border-radius: 5px; }
         .options { list-style: none; padding: 0; }
-        .options li { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; cursor: pointer; }
-        .selected { background-color: #e0e0e0; }
+        .options li { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; display: flex; align-items: center; }
+        .options input[type="checkbox"], .options input[type="radio"] { margin-right: 10px; }
         .correct { background-color: #d4edda; }
         .incorrect { background-color: #f8d7da; }
         .disabled { pointer-events: none; color: gray; }
         .hidden { display: none; }
         img { max-width: 100%; margin-top: 10px; }
         .explanation { margin-top: 15px; color: #555; }
+        .progress { font-size: 1rem; margin-bottom: 15px; }
     </style>
 </head>
 <body>
     <h1>랜덤 문제은행</h1>
     <div class="question-container">
+        <p class="progress">문제 <span id="current-question-number">0</span> / <span id="total-questions">0</span> (남은 문제: <span id="remaining-questions">0</span>)</p>
         <p id="question-text">여기에 문제가 표시됩니다.</p>
         <img id="question-image" class="hidden" alt="Question Image">
         <ul id="options" class="options"></ul>
         <button id="check-answer-btn" onclick="checkAnswer()">정답 확인</button>
-        <button id="next-question-btn" onclick="loadQuestion()" class="hidden">다음 문제</button>
+        <button id="next-question-btn" onclick="loadNextQuestion()" class="hidden">다음 문제</button>
         <p id="explanation" class="explanation hidden"></p>
     </div>
 
-    <div class="score-container">
+    <div class="result-container hidden">
+        <h2>결과</h2>
         <p>맞은 개수: <span id="correct-count">0</span></p>
-        <p>틀린 문제 목록:</p>
-        <ul id="incorrect-list"></ul>
+        <p>틀린 개수: <span id="incorrect-count">0</span></p>
         <button id="download-btn" onclick="downloadReport()">보고서 다운로드</button>
     </div>
 
     <script>
+        let questionList = []; // 랜덤 순서의 문제 리스트
         let currentQuestion = null;
-        let selectedOption = null;
         let correctCount = 0;
+        let incorrectCount = 0;
+        let currentQuestionNumber = 0;
+        let maxSelections = 1; // 선택 가능한 최대 개수 (기본값 1)
         const incorrectList = [];
 
-        // 문제 불러오기
-        async function loadQuestion() {
-            const response = await fetch("http://127.0.0.1:8111/get-question");
-            currentQuestion = await response.json();
+        // 페이지 로딩 시 모든 문제 불러오기
+        async function loadQuestions() {
+            const response = await fetch("http://122.45.4.113:8111/get-questions");
+            questionList = await response.json();
+            questionList = shuffleArray(questionList); // 문제 순서를 섞음
+
+            document.getElementById("total-questions").innerText = questionList.length;
+            loadNextQuestion();
+        }
+
+        // 문제를 섞는 함수
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // 다음 문제 불러오기
+        function loadNextQuestion() {
+            if (questionList.length === 0) {
+                showResults();
+                return;
+            }
+            currentQuestion = questionList.pop();
+            currentQuestionNumber++;
+
+            // 각 문제의 선택 제한 설정
+            if (currentQuestion.title.includes("Choose")) {
+                maxSelections = Array.isArray(currentQuestion.answer) ? currentQuestion.answer.length : 2;
+            } else {
+                maxSelections = 1;
+            }
+
             displayQuestion();
         }
 
         // 문제 표시
         function displayQuestion() {
+            document.querySelector(".question-container").classList.remove("hidden");
+            document.querySelector(".result-container").classList.add("hidden");
+
             document.getElementById("question-text").innerText = currentQuestion.title;
             document.getElementById("explanation").classList.add("hidden");
 
@@ -64,45 +103,56 @@
 
             const optionsContainer = document.getElementById("options");
             optionsContainer.innerHTML = '';
+
+            // 선택 유형 결정
+            const inputType = maxSelections === 1 ? "radio" : "checkbox";
+
             currentQuestion.options.forEach(option => {
                 const optionElement = document.createElement("li");
-                optionElement.innerText = option;
-                optionElement.onclick = () => selectOption(optionElement, option);
+
+                // 체크박스 또는 라디오 버튼 생성
+                const input = document.createElement("input");
+                input.type = inputType;
+                input.name = "option";
+                input.value = option;
+
+                // 옵션 텍스트 추가
+                optionElement.appendChild(input);
+                optionElement.appendChild(document.createTextNode(option));
                 optionsContainer.appendChild(optionElement);
             });
 
+            // 진행 상태 업데이트
+            document.getElementById("current-question-number").innerText = currentQuestionNumber;
+            document.getElementById("remaining-questions").innerText = questionList.length;
+
             document.getElementById("check-answer-btn").classList.remove("hidden");
             document.getElementById("next-question-btn").classList.add("hidden");
-            selectedOption = null;
-        }
-
-        // 옵션 선택
-        function selectOption(element, option) {
-            document.querySelectorAll("#options li").forEach(li => li.classList.remove("selected"));
-            element.classList.add("selected");
-            selectedOption = option;
         }
 
         // 정답 확인
         async function checkAnswer() {
-            if (!selectedOption) {
+            const selectedOptions = Array.from(document.querySelectorAll(`#options input[type="${maxSelections === 1 ? 'radio' : 'checkbox'}"]:checked`))
+                                        .map(input => input.value);
+
+            if (selectedOptions.length === 0) {
                 alert("먼저 답을 선택해 주세요.");
                 return;
             }
 
-            const response = await fetch(`http://127.0.0.1:8111/check-answer/${currentQuestion.index}`, {
+            const response = await fetch(`http://122.45.4.113:8111/check-answer/${currentQuestion.index}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ answer: selectedOption })
+                body: JSON.stringify({ answer: selectedOptions })
             });
             const result = await response.json();
 
             document.querySelectorAll("#options li").forEach(li => {
-                li.classList.remove("selected");
-                li.classList.add("disabled");  // 문항 비활성화
-                if (li.innerText === result.correct_answer) {
+                const input = li.querySelector("input");
+                input.disabled = true;  // 문항 비활성화
+                if (result.correct_answer.includes(input.value)) {
                     li.classList.add("correct");
-                } else if (li.innerText === selectedOption && li.innerText !== result.correct_answer) {
+                } else if (selectedOptions.includes(input.value) && !result.correct_answer.includes(input.value)) {
                     li.classList.add("incorrect");
                 }
             });
@@ -110,23 +160,34 @@
             document.getElementById("explanation").innerText = result.explanation || "해당 문제에 대한 설명이 없습니다.";
             document.getElementById("explanation").classList.remove("hidden");
 
-            if (result.correct) {
+            // 모든 정답을 맞추지 못한 경우 틀린 것으로 처리
+            if (result.correct && selectedOptions.length === result.correct_answer.length && 
+                selectedOptions.every(option => result.correct_answer.includes(option))) {
                 correctCount++;
-                document.getElementById("correct-count").innerText = correctCount;
             } else {
-                incorrectList.push(currentQuestion.title);
-                const incorrectItem = document.createElement("li");
-                incorrectItem.innerText = currentQuestion.title;
-                document.getElementById("incorrect-list").appendChild(incorrectItem);
+                incorrectCount++;
+                incorrectList.push({
+                    title: currentQuestion.title,
+                    correct_answer: result.correct_answer
+                });
             }
 
             document.getElementById("check-answer-btn").classList.add("hidden");
             document.getElementById("next-question-btn").classList.remove("hidden");
         }
 
+        // 최종 결과 표시
+        function showResults() {
+            document.querySelector(".question-container").classList.add("hidden");
+            document.querySelector(".result-container").classList.remove("hidden");
+
+            document.getElementById("correct-count").innerText = correctCount;
+            document.getElementById("incorrect-count").innerText = incorrectCount;
+        }
+
         // 보고서 다운로드
         async function downloadReport() {
-            const response = await fetch("http://127.0.0.1:8111/download-report", {
+            const response = await fetch("http://122.45.4.113:8111/download-report", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ correctCount: correctCount, incorrectList: incorrectList })
@@ -142,8 +203,8 @@
             window.URL.revokeObjectURL(url);
         }
 
-        // 페이지 로딩 시 첫 문제 불러오기
-        loadQuestion();
+        // 페이지 로딩 시 모든 문제 불러오기
+        loadQuestions();
     </script>
 </body>
 </html>

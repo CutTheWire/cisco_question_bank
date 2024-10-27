@@ -1,13 +1,15 @@
-import uvicorn
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
-from fastapi.staticfiles import StaticFiles
-from fastapi import FastAPI, HTTPException, Request
-from pydantic import BaseModel
-from docx import Document
 import json
 import os
 import random
+from typing import List
+
+import uvicorn
+from docx import Document
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -29,19 +31,23 @@ with open("questions.json", "r", encoding="utf-8") as file:
 
 # 요청 바디 모델 정의
 class AnswerRequest(BaseModel):
-    answer: str
+    answer: List[str]
 
-# 무작위 문제를 제공하는 API 엔드포인트
-@app.get("/get-question")
-async def get_question():
-    question = random.choice(questions_data)
-    question_for_frontend = {
-        "index": question["index"],
-        "title": question["title"],
-        "options": question["options"],
-        "image": question.get("image")  # 이미지 경로를 포함하도록 추가
-    }
-    return question_for_frontend
+# 모든 문제를 제공하는 API 엔드포인트
+@app.get("/get-questions")
+async def get_questions():
+    # 모든 문제를 반환하되, 순서를 랜덤하게 섞어서 반환
+    randomized_questions = random.sample(questions_data, len(questions_data))
+    questions_for_frontend = [
+        {
+            "index": question["index"],
+            "title": question["title"],
+            "options": question["options"],
+            "image": question.get("image")
+        }
+        for question in randomized_questions
+    ]
+    return questions_for_frontend
 
 # 사용자가 제출한 답변을 확인하는 API 엔드포인트
 @app.post("/check-answer/{question_index}")
@@ -49,11 +55,14 @@ async def check_answer(question_index: int, request: AnswerRequest):
     question = next((q for q in questions_data if q["index"] == question_index), None)
     if question is None:
         raise HTTPException(status_code=404, detail="Question not found")
-    correct = request.answer == question["answer"]
+
+    # 정답이 여러 개인 경우 처리
+    correct_answer = question["answer"]
+    correct = sorted(request.answer) == sorted(correct_answer)
     explanation = question.get("explanation", "")
     return {
         "correct": correct,
-        "correct_answer": question["answer"],
+        "correct_answer": correct_answer,
         "explanation": explanation
     }
 
@@ -68,10 +77,13 @@ async def download_report(request: Request):
     doc = Document()
     doc.add_heading("퀴즈 결과 보고서", level=1)
     doc.add_paragraph(f"맞은 개수: {correct_count}")
-    
+    doc.add_paragraph(f"틀린 개수: {len(incorrect_list)}")
+
     doc.add_heading("틀린 문제 목록:", level=2)
     for item in incorrect_list:
-        doc.add_paragraph(f"- {item}")
+        doc.add_paragraph(f"문제: {item['title']}")
+        doc.add_paragraph(f"정답: {item['correct_answer']}")
+        doc.add_paragraph("")
 
     # Word 파일로 저장
     output_path = "report.docx"

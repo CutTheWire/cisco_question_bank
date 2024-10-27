@@ -339,7 +339,7 @@
   },
   {
     "index": 25,
-    "title": "",
+    "title": "Consider the following access list. access-list 100 permit ip host 192.168.10.1 any access-list 100 deny icmp 192.168.10.0 0.0.0.255 any echo access-list 100 permit ip any any Which two actions are taken if the access list is placed inbound on a router Gigabit Ethernet port that has the IP address 192.168.10.254 assigned? (Choose two.)",
     "image": null,
     "options": [
       "Only Layer 3 connections are allowed to be made from the router to any other network device.",
@@ -453,7 +453,7 @@
   },
   {
     "index": 33,
-    "title": "",
+    "title": "Refer to the exhibit. An administrator first configured an extended ACL as shown by the output of the show access-lists command. The administrator then edited this access-list by issuing the commands below. Router(config)# ip access-list extended 101 Router(config-ext-nacl)# no 20 Router(config-ext-nacl)# 5 permit tcp any any eq 22 Router(config-ext-nacl)# 20 deny udp any any Which two conclusions can be drawn from this new configuration?​ (Choose two.)",
     "image": "3~5/image-12.png",
     "options": [
       "TFTP packets will be permitted.​",
