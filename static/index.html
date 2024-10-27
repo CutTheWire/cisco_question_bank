@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랜덤 문제은행</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 20px; }
+        .question-container { border: 1px solid #ddd; padding: 20px; max-width: 600px; margin: 0 auto; border-radius: 5px; }
+        .options { list-style: none; padding: 0; }
+        .options li { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; cursor: pointer; }
+        .selected { background-color: #e0e0e0; }
+        .correct { background-color: #d4edda; }
+        .incorrect { background-color: #f8d7da; }
+        .disabled { pointer-events: none; color: gray; }
+        .hidden { display: none; }
+        img { max-width: 100%; margin-top: 10px; }
+        .explanation { margin-top: 15px; color: #555; }
+    </style>
+</head>
+<body>
+    <h1>랜덤 문제은행</h1>
+    <div class="question-container">
+        <p id="question-text">여기에 문제가 표시됩니다.</p>
+        <img id="question-image" class="hidden" alt="Question Image">
+        <ul id="options" class="options"></ul>
+        <button id="check-answer-btn" onclick="checkAnswer()">정답 확인</button>
+        <button id="next-question-btn" onclick="loadQuestion()" class="hidden">다음 문제</button>
+        <p id="explanation" class="explanation hidden"></p>
+    </div>
+
+    <div class="score-container">
+        <p>맞은 개수: <span id="correct-count">0</span></p>
+        <p>틀린 문제 목록:</p>
+        <ul id="incorrect-list"></ul>
+        <button id="download-btn" onclick="downloadReport()">보고서 다운로드</button>
+    </div>
+
+    <script>
+        let currentQuestion = null;
+        let selectedOption = null;
+        let correctCount = 0;
+        const incorrectList = [];
+
+        // 문제 불러오기
+        async function loadQuestion() {
+            const response = await fetch("http://127.0.0.1:8111/get-question");
+            currentQuestion = await response.json();
+            displayQuestion();
+        }
+
+        // 문제 표시
+        function displayQuestion() {
+            document.getElementById("question-text").innerText = currentQuestion.title;
+            document.getElementById("explanation").classList.add("hidden");
+
+            const img = document.getElementById("question-image");
+            if (currentQuestion.image) {
+                img.src = `static/${currentQuestion.image}`;
+                img.classList.remove("hidden");
+            } else {
+                img.classList.add("hidden");
+            }
+
+            const optionsContainer = document.getElementById("options");
+            optionsContainer.innerHTML = '';
+            currentQuestion.options.forEach(option => {
+                const optionElement = document.createElement("li");
+                optionElement.innerText = option;
+                optionElement.onclick = () => selectOption(optionElement, option);
+                optionsContainer.appendChild(optionElement);
+            });
+
+            document.getElementById("check-answer-btn").classList.remove("hidden");
+            document.getElementById("next-question-btn").classList.add("hidden");
+            selectedOption = null;
+        }
+
+        // 옵션 선택
+        function selectOption(element, option) {
+            document.querySelectorAll("#options li").forEach(li => li.classList.remove("selected"));
+            element.classList.add("selected");
+            selectedOption = option;
+        }
+
+        // 정답 확인
+        async function checkAnswer() {
+            if (!selectedOption) {
+                alert("먼저 답을 선택해 주세요.");
+                return;
+            }
+
+            const response = await fetch(`http://127.0.0.1:8111/check-answer/${currentQuestion.index}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ answer: selectedOption })
+            });
+            const result = await response.json();
+
+            document.querySelectorAll("#options li").forEach(li => {
+                li.classList.remove("selected");
+                li.classList.add("disabled");  // 문항 비활성화
+                if (li.innerText === result.correct_answer) {
+                    li.classList.add("correct");
+                } else if (li.innerText === selectedOption && li.innerText !== result.correct_answer) {
+                    li.classList.add("incorrect");
+                }
+            });
+
+            document.getElementById("explanation").innerText = result.explanation || "해당 문제에 대한 설명이 없습니다.";
+            document.getElementById("explanation").classList.remove("hidden");
+
+            if (result.correct) {
+                correctCount++;
+                document.getElementById("correct-count").innerText = correctCount;
+            } else {
+                incorrectList.push(currentQuestion.title);
+                const incorrectItem = document.createElement("li");
+                incorrectItem.innerText = currentQuestion.title;
+                document.getElementById("incorrect-list").appendChild(incorrectItem);
+            }
+
+            document.getElementById("check-answer-btn").classList.add("hidden");
+            document.getElementById("next-question-btn").classList.remove("hidden");
+        }
+
+        // 보고서 다운로드
+        async function downloadReport() {
+            const response = await fetch("http://127.0.0.1:8111/download-report", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ correctCount: correctCount, incorrectList: incorrectList })
+            });
+            const blob = await response.blob();
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "report.docx";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        // 페이지 로딩 시 첫 문제 불러오기
+        loadQuestion();
+    </script>
+</body>
+</html>
