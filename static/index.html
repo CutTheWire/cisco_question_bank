@@ -10,17 +10,23 @@
         .options { list-style: none; padding: 0; }
         .options li { padding: 10px; border: 1px solid #ddd; border-radius: 5px; margin: 5px 0; display: flex; align-items: center; }
         .options input[type="checkbox"], .options input[type="radio"] { margin-right: 10px; }
-        .correct { background-color: #d4edda; }
-        .incorrect { background-color: #f8d7da; }
+        .correct { background-color: #d4edda; color: green; }
+        .incorrect { background-color: #f8d7da; color: red; }
         .disabled { pointer-events: none; color: gray; }
         .hidden { display: none; }
         img { max-width: 100%; margin-top: 10px; }
         .explanation { margin-top: 15px; color: #555; }
         .progress { font-size: 1rem; margin-bottom: 15px; }
+        #answer-result {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>랜덤 문제은행</h1>
+    <p id="answer-result" class="hidden"></p> <!-- 정답 결과 표시 영역을 제목 바로 아래로 이동 -->
     <div class="question-container">
         <p class="progress">문제 <span id="current-question-number">0</span> / <span id="total-questions">0</span> (남은 문제: <span id="remaining-questions">0</span>)</p>
         <p id="question-text">여기에 문제가 표시됩니다.</p>
@@ -128,12 +134,13 @@
 
             document.getElementById("check-answer-btn").classList.remove("hidden");
             document.getElementById("next-question-btn").classList.add("hidden");
+            document.getElementById("answer-result").classList.add("hidden"); // 이전 정답 결과 숨기기
         }
 
         // 정답 확인
         async function checkAnswer() {
             const selectedOptions = Array.from(document.querySelectorAll(`#options input[type="${maxSelections === 1 ? 'radio' : 'checkbox'}"]:checked`))
-                                        .map(input => input.value);
+                                            .map(input => input.value);
 
             if (selectedOptions.length === 0) {
                 alert("먼저 답을 선택해 주세요.");
@@ -143,7 +150,7 @@
             const response = await fetch(`http://122.45.4.113:8111/check-answer/${currentQuestion.index}`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ answer: selectedOptions })
+                body: JSON.stringify({ answer: selectedOptions }) // 선택한 답변을 배열로 전송
             });
             const result = await response.json();
 
@@ -160,17 +167,23 @@
             document.getElementById("explanation").innerText = result.explanation || "해당 문제에 대한 설명이 없습니다.";
             document.getElementById("explanation").classList.remove("hidden");
 
-            // 모든 정답을 맞추지 못한 경우 틀린 것으로 처리
-            if (result.correct && selectedOptions.length === result.correct_answer.length && 
-                selectedOptions.every(option => result.correct_answer.includes(option))) {
+            const answerResultElement = document.getElementById("answer-result");
+            if (result.correct) {
+                answerResultElement.innerText = "정답입니다!";
+                answerResultElement.classList.add("correct");
+                answerResultElement.classList.remove("incorrect");
                 correctCount++;
             } else {
+                answerResultElement.innerText = "오답입니다.";
+                answerResultElement.classList.add("incorrect");
+                answerResultElement.classList.remove("correct");
                 incorrectCount++;
                 incorrectList.push({
                     title: currentQuestion.title,
                     correct_answer: result.correct_answer
                 });
             }
+            answerResultElement.classList.remove("hidden");
 
             document.getElementById("check-answer-btn").classList.add("hidden");
             document.getElementById("next-question-btn").classList.remove("hidden");

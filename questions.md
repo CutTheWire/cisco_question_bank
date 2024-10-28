@@ -632,7 +632,7 @@ CCNA 3 v7 Modules 3 – 5: Network Security Exam Answers 42
 - [ ] show ip interface brief
 - [ ] show ip protocols
 
-## 26. Refer to the exhibit. Which command did an administrator issue to produce this output?
+## 26. Refer to the exhibit. Which command did an administrator issue to produce this output? (Choose two.)
 ---
 ![alt text](3~5/_image-4.png)
 - [x] R1# show ip ospf interface serial0/0/1

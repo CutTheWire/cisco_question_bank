@@ -57,7 +57,27 @@ async def check_answer(question_index: int, request: AnswerRequest):
         raise HTTPException(status_code=404, detail="Question not found")
 
     correct_answer = question["answer"]
-    correct = sorted(request.answer) == sorted(correct_answer)
+
+    # 정답이 문자열인 경우와 리스트인 경우를 구분하여 비교
+    if isinstance(correct_answer, str):
+        # 정답과 사용자의 답변을 각각 리스트로 변환하여 비교
+        user_answer_list = [''.join(request.answer).replace(' ', '').replace('\n', '').strip()]
+        correct_answer_list = [correct_answer.replace(' ', '').replace('\n', '').strip()]
+        correct = user_answer_list == correct_answer_list
+    elif isinstance(correct_answer, list):
+        # 정답이 리스트인 경우, 집합으로 변환하여 순서에 상관없이 비교
+        user_answer_set = set([item.replace(' ', '').replace('\n', '').strip() for item in request.answer])
+        correct_answer_set = set([item.replace(' ', '').replace('\n', '').strip() for item in correct_answer])
+        correct = user_answer_set == correct_answer_set
+    else:
+        # 예상치 못한 데이터 형식에 대한 예외 처리
+        raise HTTPException(status_code=500, detail="Unexpected answer format in question data")
+
+    # 디버깅을 위한 출력
+    print(f"입력 : {user_answer_list if isinstance(correct_answer, str) else user_answer_set}")
+    print(f"정답 : {correct_answer_list if isinstance(correct_answer, str) else correct_answer_set}")
+    print(f"정답 여부 : {correct}")
+
     explanation = question.get("explanation", "")
     return {
         "correct": correct,
