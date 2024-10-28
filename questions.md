@@ -1,89 +1,3 @@
-## 1. The IT department is reporting that a company web server is receiving an abnormally high number of web page requests from different locations simultaneously. Which type of security attack is occurring?
----
-- [ ] Adware
-- [x] DDoS
-- [ ] Phishing
-- [ ] Social Engineering
-- [ ] Spyware
-
-## 2. What causes a buffer overflow?
----
-- [ ] Launching a security countermeasure to mitigate a Trojan horse
-- [ ] Downloading and installing too many software updates at one time
-- [x] Attempting to write more data to a memory location than that location can hold
-- [ ] Sending too much information to two or more interfaces of the same device, thereby causing dropped packets
-- [ ] Sending repeated connections such as Telnet to a particular device, thus denying other data sources
-
-## 3. Which objective of secure communications is achieved by encrypting data?
----
-- [ ] Authentication
-- [ ] Availability
-- [x] Confidentiality
-- [ ] Integrity
-
-> **Explanation:** When data is encrypted, it is scrambled to keep the data private and confidential so that only authorized recipients can read the message. A hash function is another way of providing confidentiality.
-
-## 4. What type of malware has the primary objective of spreading across the network?
----
-- [x] Worm
-- [ ] Virus
-- [ ] Trojan Horse
-- [ ] Botnet
-
-## 5. What commonly motivates cybercriminals to attack networks as compared to hacktivists or state-sponsored hackers?
----
-- [x] Financial Gain
-- [ ] Fame Seeking
-- [ ] Status Among Peers
-- [ ] Political Reasons
-
-> **Explanation:** Cybercriminals are commonly motivated by money. Hackers are known to hack for status, while cyberterrorists may act for religious or political reasons.
-
-## 6. Which type of hacker is motivated to protest against political and social issues?
----
-- [x] Hacktivist
-- [ ] Cybercriminal
-- [ ] Script Kiddie
-- [ ] Vulnerability Broker
-
-> **Explanation:** Hackers are categorized by motivating factors. Hacktivists are motivated by protesting political and social issues.
-
-## 7. What is a ping sweep?
----
-- [ ] A query and response protocol that identifies information about a domain, including the addresses that are assigned to that domain.
-- [ ] A scanning technique that examines a range of TCP or UDP port numbers on a host to detect listening services.
-- [ ] A software application that enables the capture of all network packets that are sent across a LAN.
-- [x] A network scanning technique that indicates the live hosts in a range of IP addresses.
-
-> **Explanation:** A ping sweep is a tool used during reconnaissance attacks to gather information about a network.
-
-## 8. In what type of attack is a cybercriminal attempting to prevent legitimate users from accessing network services?
----
-- [ ] Address Spoofing
-- [ ] MITM
-- [ ] Session Hijacking
-- [x] DoS
-
-> **Explanation:** In a DoS or denial-of-service attack, the attacker’s goal is to prevent legitimate users from accessing network services.
-
-## 9. Which requirement of secure communications is ensured by the implementation of MD5 or SHA hash generating algorithms?
----
-- [ ] Nonrepudiation
-- [ ] Authentication
-- [x] Integrity
-- [ ] Confidentiality
-
-> **Explanation:** Integrity is ensured by implementing either MD5 or SHA hash generating algorithms. Authentication and confidentiality are handled with other protocols and encryption methods.
-
-## 10. If an asymmetric algorithm uses a public key to encrypt data, what is used to decrypt it?
----
-- [ ] A digital certificate
-- [ ] A different public key
-- [x] A private key
-- [ ] DH
-
-> **Explanation:** In asymmetric encryption, if a public key encrypts the data, only the corresponding private key can decrypt it.
-
 ## 11. Refer to the exhibit. Which two ACLs would permit only the two LAN networks attached to R1 to access the network that connects to R2 G0/1 interface? (Choose two.)
 ---
 ![alt text](3~5/image.png)
@@ -244,27 +158,6 @@
 - [ ] The commands are added at the beginning of the existing Managers ACL.
 - [ ] The network administrator receives an error that states that the ACL already exists.
 
-## 27. In which TCP attack is the cybercriminal attempting to overwhelm a target host with half-open TCP connections?
----
-- [ ] port scan attack
-- [x] SYN flood attack
-- [ ] session hijacking attack
-- [ ] reset attack
-
-> **Explanation:** In a TCP SYN flood attack, the attacker sends to the target host a continuous flood of TCP SYN session requests with a spoofed source IP address. The target host responds with a TCP-SYN-ACK to each of the SYN session requests and waits for a TCP ACK that will never arrive. Eventually the target is overwhelmed with half-open TCP connections.
-
-## 28. Which protocol is attacked when a cybercriminal provides an invalid gateway in order to create a man-in-the-middle attack?
----
-- [x] DHCP
-- [ ] DNS
-- [ ] ICMP
-- [ ] HTTP or HTTPS
-> **Explanation:** A cybercriminal could set up a rogue DHCP server that provides one or more of the following:
->
-> - Wrong default gateway that is used to create a man-in-the-middle attack and allow the attacker to intercept data
-> - Wrong DNS server that results in the user being sent to a malicious website
-> - Invalid default gateway IP address that results in a denial of service attack on the DHCP client
-
 ## 29. Refer to the exhibit. An administrator has configured a standard ACL on R1 and applied it to interface serial 0/0/0 in the outbound direction. What happens to traffic leaving interface serial 0/0/0 that does not match the configured ACL statements?
 ---
 ![alt text](3~5/image-10.png)
@@ -343,13 +236,6 @@ The destination in this example is printer VLAN 12 which has router R1 Gigabit s
 > - destination address and wildcard
 > - port number or name
 
-## 35. What is the term used to describe a mechanism that takes advantage of a vulnerability?
----
-- [ ] mitigation
-- [x] exploit
-- [ ] vulnerability
-- [ ] threat
-
 ## 36. Refer to the exhibit. The network administrator has an IP address of 192.168.11.10 and needs access to manage R1. What is the best ACL type and placement to use in this situation?
 ---
 ![alt text](3~5/image-13.png)
@@ -364,34 +250,6 @@ The destination in this example is printer VLAN 12 which has router R1 Gigabit s
 - [ ] to generate and send an informational message whenever the ACE is matched
 - [x] to identify any IP address
 - [ ] to identify one specific IP address
-
-## 38. Which statement accurately characterizes the evolution of threats to network security?
----
-- [ ] Internet architects planned for network security from the beginning.
-- [ ] Early Internet users often engaged in activities that would harm other users.
-- [x] Internal threats can cause even greater damage than external threats.
-- [ ] Threats have become less sophisticated while the technical knowledge needed by an attacker has grown.
-
-## 39. A user receives a phone call from a person who claims to represent IT services and then asks that user for confirmation of username and password for auditing purposes. Which security threat does this phone call represent?
----
-- [ ] spam
-- [x] social engineering
-- [ ] DDoS
-- [ ] anonymous keylogging
-
-## 40. In what way are zombies used in security attacks?
----
-- [ ] They target specific individuals to gain corporate or personal information.
-- [ ] They probe a group of machines for open ports to learn which services are running.
-- [ ] They are maliciously formed code segments used to replace legitimate applications.
-- [x] They are infected machines that carry out a DDoS attack.
-
-## 41. Which attack involves threat actors positioning themselves between a source and destination with the intent of transparently monitoring, capturing, and controlling the communication?
----
-- [x] man-in-the-middle attack
-- [ ] SYN flood attack
-- [ ] DoS attack
-- [ ] ICMP attack
 
 ## 42. Which two keywords can be used in an access control list to replace a wildcard mask or address and wildcard mask pair? (Choose two.)
 ---
@@ -438,13 +296,6 @@ The destination in this example is printer VLAN 12 which has router R1 Gigabit s
 - [ ] to remove a configured ACL
 - [ ] to apply a standard ACL to an interface
 
-## 48. What is the term used to describe the same pre-shared key or secret key, known by both the sender and receiver to encrypt and decrypt data?
----
-- [x] symmetric encryption algorithm
-- [ ] data integrity
-- [ ] exploit
-- [ ] risk
-
 ## 49. Refer to the exhibit. Internet privileges for an employee have been revoked because of abuse but the employee still needs access to company resources. What is the best ACL type and placement to use in this situation?
 ---
 ![alt text](3~5/image-15.png)
@@ -471,27 +322,6 @@ CCNA 3 v7 Modules 3 – 5: Network Security Exam Answers 42
 - [ ]  secure management traffic into the router
 - [ ] to secure administrative access to the router
 - [ ] to display all restricted traffic
-
-## 52. In which type of attack is falsified information used to redirect users to malicious Internet sites?
----
-- [ ] DNS amplification and reflection
-- [ ] ARP cache poisoning
-- [x] DNS cache poisoning
-- [ ] domain generation
-
-## 53. What is a feature of an IPS?
----
-- [x] It can stop malicious packets.
-- [ ] It is deployed in offline mode.
-- [ ] It has no impact on latency.
-- [ ] It is primarily focused on identifying possible incidents.
-
-## 54. What is the term used to describe a potential danger to a company’s assets, data, or network functionality?
----
-- [ ] vulnerability
-- [x] threat
-- [ ] asset
-- [ ] exploit
 
 ## 55. Refer to the exhibit. Network 192.168.30.0/24 contains all of the company servers. Policy dictates that traffic from the servers to both networks 192.168.10.0 and 192.168.11.0 be limited to replies for original requests. What is the best ACL type and placement to use in this situation?
 ---
@@ -527,13 +357,6 @@ CCNA 3 v7 Modules 3 – 5: Network Security Exam Answers 42
 - [ ] to apply an ACL to all router interfaces
 - [ ] to secure administrative access to the router
 
-## 59. What is the best description of Trojan horse malware?
----
-- [ ] It is malware that can only be distributed over the Internet.
-- [x] It appears as useful software but hides malicious code.
-- [ ] It is software that causes annoying but not fatal computer problems.
-- [ ] It is the most easily detected form of malware.
-
 ## 60. What wild card mask will match networks 172.16.0.0 through 172.19.0.0?
 ---
 - [ ] 0.0.3.255
@@ -541,33 +364,12 @@ CCNA 3 v7 Modules 3 – 5: Network Security Exam Answers 42
 - [x] 0.3.255.255
 - [ ] 0.0.255.255
 
-## 61. What is the term used to describe gray hat hackers who publicly protest organizations or governments by posting articles, videos, leaking sensitive information, and performing network attacks?
----
-- [ ] white hat hackers
-- [ ] grey hat hackers
-- [x] hacktivists
-- [ ] state-sponsored hacker
-
 ## 62. A technician is tasked with using ACLs to secure a router. When would the technician use the no ip access-list 101 configuration option or command?
 ---
 - [ ] to apply an ACL to all router interfaces
 - [ ] to secure administrative access to the router
 - [ ] to remove all ACLs from the router
 - [x] to remove a configured ACL
-
-## 63. What is the term used to describe unethical criminals who compromise computer and network security for personal gain, or for malicious reasons?
----
-- [ ] hacktivists
-- [ ] vulnerability broker
-- [x] black hat hackers
-- [ ] script kiddies
-
-## 64. What is the term used to describe a guarantee that the message is not a forgery and does actually come from whom it states?
----
-- [x] origin authentication
-- [ ] mitigation
-- [ ] exploit
-- [ ] data non-repudiation
 
 ## 65. A technician is tasked with using ACLs to secure a router. When would the technician use the ip access-group 101 in configuration option or command?
 ---
@@ -628,13 +430,6 @@ CCNA 3 v7 Modules 3 – 5: Network Security Exam Answers 42
 - [ ] to identify any IP address
 - [x] to identify one specific IP address
 
-## 73. What commonly motivates cybercriminals to attack networks as compared to hacktivists or state-sponsored hackers?
----
-- [x] financial gain
-- [ ] political reasons
-- [ ] fame seeking
-- [ ] status among peers
-
 ## 74. Refer to the exhibit. The company has provided IP phones to employees on the 192.168.10.0/24 network and the voice traffic will need priority over data traffic. What is the best ACL type and placement to use in this situation?
 ---
 ![alt text](3~5/image-22.png)
@@ -657,3 +452,412 @@ CCNA 3 v7 Modules 3 – 5: Network Security Exam Answers 42
 - [ ] LSR
 - [x] LSU
 - [ ] LSAck
+
+ 
+## 1. Which three statements describe features of the OSPF topology table? (Choose three.)
+---
+- [x] It is a link-state database that represents the network topology.
+- [ ] Its contents are the result of running the SPF algorithm.
+- [x] When converged, all routers in an area have identical topology tables.
+- [ ] The topology table contains feasible successor routes.
+- [x] The table can be viewed via the show ip ospf database command.
+- [ ] After convergence, the table only contains the lowest cost route entries for all known networks.
+
+## 1. What does an OSPF area contain?
+---
+- [ ] routers that share the same router ID
+- [ ] routers whose SPF trees are identical
+- [x] routers that have the same link-state information in their LSDBs
+- [ ] routers that share the same process ID
+
+## 5. What is used to facilitate hierarchical routing in OSPF?
+---
+- [x] the use of multiple areas
+- [ ] frequent SPF calculations
+- [ ] autosummarization
+- [ ] the election of designated routers
+
+## 6. Which OSPF data structure is identical on all OSPF routers that share the same area?
+---
+- [ ] forwarding database
+- [x] link-state database
+- [ ] adjacency database
+- [ ] routing table
+
+## 7. WWhich step does an OSPF-enabled router take immediately after establishing an adjacency with another router?
+---
+- [ ] builds the topology table
+- [x] link-state advertisements
+- [ ] chooses the best path
+- [ ] executes the SPF algorithm
+
+## 8. A network engineer has manually configured the hello interval to 15 seconds on an interface of a router that is running OSPFv2. By default, how will the dead interval on the interface be affected?
+---
+- [ ] The dead interval will not change from the default value.
+- [ ] The dead interval will now be 30 seconds.
+- [x] The dead interval will now be 60 seconds.
+- [ ] The dead interval will now be 15 seconds.
+
+## 9. Refer to the exhibit. A network administrator has configured the OSPF timers to the values that are shown in the graphic. What is the result of having those manually configured timers?
+---
+- [ ] R1 automatically adjusts its own timers to match the R2 timers.
+- [x] The R1 dead timer expires between hello packets from R2.
+- [ ] The hello timer on R2 expires every ten seconds.
+- [ ] The neighbor adjacency has formed.
+
+## 10. To establish a neighbor adjacency two OSPF routers will exchange hello packets. Which two values in the hello packets must match on both routers? (Choose two.)
+---
+- [x] dead interval 
+- [ ] router priority
+- [ ] list of neighbors
+- [ ] router ID
+- [x] hello interval
+
+## 11. What is the default router priority value for all Cisco OSPF routers?
+---
+- [ ] 0
+- [x] 1
+- [ ] 10
+- [ ] 255
+
+## 12. Which type of OSPFv2 packet contains an abbreviated list of the LSDB of a sending router and is used by receiving routers to check against the local LSDB?
+---
+- [x] database description
+- [ ] link-state update
+- [ ] link-state request
+- [ ] link-state acknowledgmen
+
+## 13. In an OSPF network when are DR and BDR elections required?
+---
+- [ ] when the two adjacent neighbors are interconnected over a point-to-point link
+- [ ] when all the routers in an OSPF area cannot form adjacencies
+- [x] when the routers are interconnected over a common Ethernet network
+- [ ] when the two adjacent neighbors are in two different networks
+
+## 14. When an OSPF network is converged and no network topology change has been detected by a router, how often will LSU packets be sent to neighboring routers?
+---
+- [ ] every 5 minutes
+- [ ] every 10 minutes
+- [x] every 30 minutes
+- [ ] every 60 minutes
+
+## 15. What will an OSPF router prefer to use first as a router ID?
+---
+- [ ] a loopback interface that is configured with the highest IP address on the router
+- [x] any IP address that is configured using the router-id command
+- [ ] the highest active interface IP that is configured on the router
+- [ ] the highest active interface that participates in the routing process because of a specifically configured network statement
+
+## 16. What are the two purposes of an OSPF router ID? (Choose two.)
+---
+- [x] to uniquely identify the router within the OSPF domain
+- [x] to facilitate router participation in the election of the designated router
+- [ ] to enable the SPF algorithm to determine the lowest cost path to remote networks
+- [ ] to facilitate the establishment of network convergence
+- [ ] to facilitate the transition of the OSPF neighbor state to Full
+
+## 17. Refer to the exhibit. If no router ID was manually configured, what would router Branch1 use as its OSPF router ID?
+---
+![alt text](3~5/image-23.png)
+
+- [ ] 10.0.0.1
+- [ ] 10.1.0.1
+- [x] 192.168.1.100
+- [ ] 209.165.201.1
+
+## 18. A network technician issues the following commands when configuring a router: \n R1(config)# router ospf 11 \n R1(config-router)# network 10.10.10.0 0.0.0.255 area 0 \n What does the number 11 represent?
+---
+- [x] the OSPF process ID on R1
+- [ ] the cost of the link to R1
+- [ ] the autonomous system number to which R1 belongs
+- [ ] the administrative distance that is manually assigned to R1
+- [ ] the area number where R1 is located
+
+## 19. An OSPF router has three directly connected networks; 172.16.0.0/16, 172.16.1.0/16, and 172.16.2.0/16. Which OSPF network command would advertise only the 172.16.1.0 network to neighbors?
+---
+- [ ] router(config-router)# network 172.16.1.0 0.0.255.255 area 0
+- [ ] router(config-router)# network 172.16.0.0 0.0.15.255 area 0
+- [x] router(config-router)# network 172.16.1.0 255.255.255.0 area 0
+- [ ] router(config-router)# network 172.16.1.0 0.0.0.0 area 0
+
+## 20. Refer to the exhibit. Which three statements describe the results of the OSPF election process of the topology that is shown in the exhibit? (Choose three.)
+---
+![alt text](3~5/_image.png)
+
+- [x] R3 will be elected BDR.
+- [ ] The R4 FastEthernet 0/0 priority is 128.
+- [x] The R4 router ID is 172.16.1.1.
+- [ ] R1 will be elected BDR.
+- [ ] The router ID on R2 is the loopback interface.
+- [x] R2 will be elected DR.
+
+## 21. Refer to the exhibit. If the switch reboots and all routers have to re-establish OSPF adjacencies, which routers will become the new DR and BDR?
+---
+![alt text](3~5/_image-1.png)
+
+- [x] Router R4 will become the DR and router R1 will become the BDR.
+- [ ] Router R2 will become the DR and router R3 will become the BDR.
+- [ ] Router R1 will become the DR and router R2 will become the BDR.
+- [ ] Router R4 will become the DR and router R3 will become the BDR.
+
+## 22. By default, what is the OSPF cost for any link with a bandwidth of 100 Mb/s or greater?
+---
+- [ ] 100000000
+- [ ] 10000
+- [x] 1
+- [ ] 100
+
+## 23. Refer to the exhibit. What is the OSPF cost to reach the router A LAN 172.16.1.0/24 from B?
+---
+![alt text](3~5/_image-2.png)
+- [ ] 782
+- [ ] 74
+- [ ] 128
+- [x] 65
+
+## 24. Refer to the exhibit. On which router or routers would a default route be statically configured in a corporate environment that uses single area OSPF as the routing protocol?
+---
+![alt text](3~5/_image-3.png)
+- [x] R0-A
+- [ ] ISP, R0-A, R0-B, and R0-C
+- [ ] ISP
+- [ ] R0-B and R0-C
+- [ ] ISP and R0-A
+- [ ] R0-A, R0-B, and R0-C
+
+## 25. What command would be used to determine if a routing protocol-initiated relationship had been made with an adjacent router?
+---
+- [ ] ping
+- [x] show ip ospf neighbor
+- [ ] show ip interface brief
+- [ ] show ip protocols
+
+## 26. Refer to the exhibit. Which command did an administrator issue to produce this output?
+---
+![alt text](3~5/_image-4.png)
+- [x] R1# show ip ospf interface serial0/0/1
+- [ ] R1# show ip route ospf
+- [ ] R1# show ip ospf
+- [ ] R1# show ip ospf neighbo
+
+## 27. Which command is used to verify that OSPF is enabled and also provides a list of the networks that are being advertised by the network?​
+---
+- [ ] how ip interface brief
+- [ ] show ip ospf interface
+- [x] show ip protocols
+- [ ] show ip route ospf
+
+## 28. Refer to the exhibit. A network administrator has configured OSPFv2 on the two Cisco routers but PC1 is unable to connect to PC2. What is the most likely problem?
+---
+![alt text](3~5/_image-5.png)
+- [x] Interface Fa0/0 has not been activated for OSPFv2 on router R2.
+- [ ] Interface Fa0/0 is configured as a passive-interface on router R2.
+- [ ] Interface S0/0 is configured as a passive-interface on router R2.
+- [ ] Interface s0/0 has not been activated for OSPFv2 on router R2.
+
+## 29. What is the recommended Cisco best practice for configuring an OSPF-enabled router so that each router can be easily identified when troubleshooting routing issues?
+---
+- [x] Configure a value using the router-id command.
+- [ ] Use the highest active interface IP address that is configured on the router.
+- [ ] Use a loopback interface configured with the highest IP address on the router.
+- [ ] Use the highest IP address assigned to an active interface participating in the routing process.
+
+## 30. Which step in the link-state routing process is described by a router running an algorithm to determine the best path to each destination?
+---
+- [ ] load balancing equal-cost paths
+- [ ] declaring a neighbor to be inaccessible
+- [ ] choosing the best route
+- [x] executing the SPF algorithm
+
+## 31. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 192.168.223.0 255.255.254.0. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [x] 0.0.1.255
+- [ ] 0.0.7.255
+- [ ] 0.0.15.255
+- [ ] 0.0.31.255
+
+## 32. What is the format of the router ID on an OSPF-enabled router?
+---
+- [ ] a unique router host name that is configured on the router
+- [ ] a unique phrase with no more than 16 characters
+- [x] a 32-bit number formatted like an IPv4 address
+- [ ] an 8-bit number with a decimal value between 0 and 255
+- [ ] a character string with no space
+
+## 34. After modifying the router ID on an OSPF router, what is the preferred method to make the new router ID effective?
+---
+- [ ] HQ# copy running-config startup-config
+- [ ] HQ# resume
+- [ ] HQ# clear ip route *
+- [x] HQ# clear ip ospf process
+
+## 35. In an OSPFv2 configuration, what is the effect of entering the command network 192.168.1.1 0.0.0.0 area 0 ?
+---
+- [ ] It allows all 192.168.1.0 networks to be advertised.
+- [x] It tells the router which interface to turn on for the OSPF routing process.
+- [ ] It changes the router ID of the router to 192.168.1.1.
+- [ ] It enables OSPF on all interfaces on the router.
+
+## 36. What is the reason for a network engineer to alter the default reference bandwidth parameter when configuring OSPF?
+---
+- [ ] to force that specific link to be used in the destination route
+- [x] to more accurately reflect the cost of links greater than 100 Mb/s
+- [ ] to enable the link for OSPF routing
+- [ ] to increase the speed of the link
+
+## 37. Open the PT Activity. Perform the tasks in the activity instructions and then answer the question. Which task has to be performed on Router 1 for it to establish an OSPF adjacency with Router 2?
+---
+![alt text](3~5/_image-6.png)
+
+- [ ] Issue the clear ip ospf process command.
+- [x] Change the subnet mask of interface FastEthernet 0/0 to 255.255.255.0.
+- [ ] Remove the passive interface command from interface FastEthernet 0/0.
+- [ ] Add the network 10.0.1.0 0.0.0.255 area 0 command to the OSPF process.
+
+## 38. Match the description to the term. (Not all options are used.)
+---
+![alt text](3~5/_image-7.png)
+
+- [x] o
+- [ ] x
+- [ ] x
+- [ ] x
+
+## 39. What is a benefit of multiarea OSPF routing?
+---
+- [x] Topology changes in one area do not cause SPF recalculations in other areas.
+- [ ] Routers in all areas share the same link-state database and have a complete picture of the entire network.
+- [ ] A backbone area is not required.
+- [ ] Automatic route summarization occurs by default between areas.
+
+## 40. Match the OSPF state with the order in which it occurs. (Not all options are used.)
+---
+![alt text](3~5/_image-8.png)
+
+- [x] o
+- [ ] x
+- [ ] x
+- [ ] x
+
+## 41. What indicates to a link-state router that a neighbor is unreachable?
+---
+- [x] if the router no longer receives hello packets
+- [ ] if the router receives an update with a hop count of 16
+- [ ] if the router receives an LSP with previously learned information
+- [ ] if the router no longer receives routing updates
+
+## 42. Which three OSPF states are involved when two routers are forming an adjacency? (Choose three.)
+---
+- [ ] Exchange
+- [x] Init
+- [ ] ExStart
+- [x] Two-way
+- [ ] Loading
+- [x] Down
+
+## 43. Refer to the exhibit. Suppose that routers B, C, and D have a default priority, and router A has a priority 0. Which conclusion can be drawn from the DR/BDR election process?​
+---
+![alt text](3~5/_image-9.png)
+
+- [ ] If the priority of router C is changed to 255, then it will become the DR.
+- [ ] Router A will become the DR and router D will become the BDR.​
+- [x] If the DR fails, the new DR will be router B.
+- [ ] If a new router with a higher priority is added to this network, it will become the DR.
+
+## 44. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 64.102.0.0 255.255.255.128. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [ ] 0.0.31.255
+- [ ] 0.0.0.63
+- [ ] 0.0.63.255
+- [x] 0.0.0.127
+
+## 45. Which command will a network engineer issue to verify the configured hello and dead timer intervals on a point-to-point WAN link between two routers that are running OSPFv2?
+---
+- [ ] show ipv6 ospf interface serial 0/0/0
+- [ ] show ip ospf neighbor
+- [ ] show ip ospf interface fastethernet 0/1
+- [x] show ip ospf interface serial 0/0/0
+
+## 46. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 128.107.0.0 255.255.255.192. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [ ] 0.0.63.255
+- [x] 0.0.0.63
+- [ ] 0.0.0.3
+- [ ] 0.0.0.7
+
+## 47. Match each OSPF packet type to how it is used by a router. (Not all options are used.)
+---
+![alt text](3~5/_image-10.png)
+
+- [x] o
+- [ ] x
+- [ ] x
+- [ ] x
+
+## 48. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 192.168.181.0 255.255.254.0. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [ ] .0.63.255
+- [ ] 0.0.15.255
+- [x] 0.0.1.255
+- [ ] 0.0.31.255
+
+## 49. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 198.19.0.0 255.255.252.0. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [ ] 0.0.63.255
+- [x] 0.0.3.255
+- [ ] 0.0.31.255
+- [ ] 0.0.0.255
+
+## 50. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 128.107.0.0 255.255.252.0. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [x] 0.0.3.255
+- [ ] 0.0.0.7
+- [ ] 0.0.0.3
+- [ ] 0.0.63.255
+
+## 51. Which step in the link-state routing process is described by a router flooding link-state and cost information about each directly connected link?
+---
+- [ ] building the topology table
+- [ ] selecting the router ID
+- [x] exchanging link-state advertisements
+- [ ] injecting the default route
+
+## 52. Which step in the link-state routing process is described by a router sending Hello packets out all of the OSPF-enabled interfaces?
+---
+- [ ] electing the designated router
+- [x] establishing neighbor adjacencies
+- [ ] injecting the default route
+- [ ] exchanging link-state advertisements
+
+## 53. An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 64.100.0.0 255.255.255.0. What wildcard mask would the administrator use in the OSPF network statement?
+---
+- [ ] 0.0.0.31
+- [x] 0.0.0.255
+- [ ] 0.0.0.63
+- [ ] 0.0.0.127
+
+## 54. Which step in the link-state routing process is described by a router inserting best paths into the routing table?
+---
+- [ ] declaring a neighbor to be inaccessible
+- [ ] executing the SPF algorithm
+- [ ] load balancing equal-cost paths
+- [x] choosing the best route
+
+## 55. What type of address is 64.101.198.197?
+---
+- [x] public
+- [ ] private
+
+## 56. An OSPF router has three directly connected networks; 172.16.0.0/24, 172.16.1.0/24, and 172.16.2.0/24. Which OSPF network command would advertise only the 172.16.1.0 network to neighbors?
+---
+- [ ] router(config-router)# network 172.16.1.0 0.0.255.255 area 0
+- [ ] router(config-router)# network 172.16.0.0 0.0.15.255 area 0
+- [x] router(config-router)# network 172.16.1.0 0.0.0.255 area 0
+- [ ] router(config-router)# network 172.16.1.0 0.0.0.0 area 0
+
+## 57. Which step in the link-state routing process is described by a router building a link-state database based on received LSAs?
+---
+- [ ] selecting the router ID
+- [ ] declaring a neighbor to be inaccessible
+- [ ] executing the SPF algorithm
+- [x] building the topology table

@@ -72,4 +72,4 @@ def create_questions_json(file_path: str, output_path: str):
     print(f"JSON 데이터가 '{output_path}' 파일에 저장되었습니다.")
 
 # 함수 실행
-create_questions_json("3~5.md", "questions.json")
+create_questions_json("questions.md", "questions.json")

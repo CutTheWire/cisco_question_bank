@@ -5,6 +5,7 @@ from typing import List
 
 import uvicorn
 from docx import Document
+from docx.shared import Inches
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
@@ -36,7 +37,6 @@ class AnswerRequest(BaseModel):
 # 모든 문제를 제공하는 API 엔드포인트
 @app.get("/get-questions")
 async def get_questions():
-    # 모든 문제를 반환하되, 순서를 랜덤하게 섞어서 반환
     randomized_questions = random.sample(questions_data, len(questions_data))
     questions_for_frontend = [
         {
@@ -56,7 +56,6 @@ async def check_answer(question_index: int, request: AnswerRequest):
     if question is None:
         raise HTTPException(status_code=404, detail="Question not found")
 
-    # 정답이 여러 개인 경우 처리
     correct_answer = question["answer"]
     correct = sorted(request.answer) == sorted(correct_answer)
     explanation = question.get("explanation", "")
@@ -82,8 +81,13 @@ async def download_report(request: Request):
     doc.add_heading("틀린 문제 목록:", level=2)
     for item in incorrect_list:
         doc.add_paragraph(f"문제: {item['title']}")
+        # 이미지가 있으면 추가
+        if "image" in item and item["image"]:
+            image_path = os.path.join("static", item["image"])
+            if os.path.exists(image_path):
+                doc.add_picture(image_path, width=Inches(2.0))
         doc.add_paragraph(f"정답: {item['correct_answer']}")
-        doc.add_paragraph("")
+        doc.add_paragraph("")  # 빈 줄 추가
 
     # Word 파일로 저장
     output_path = "report.docx"

@@ -1,138 +1,6 @@
 [
   {
     "index": 1,
-    "title": "The IT department is reporting that a company web server is receiving an abnormally high number of web page requests from different locations simultaneously. Which type of security attack is occurring?",
-    "image": null,
-    "options": [
-      "Adware",
-      "DDoS",
-      "Phishing",
-      "Social Engineering",
-      "Spyware"
-    ],
-    "answer": "DDoS",
-    "explanation": ""
-  },
-  {
-    "index": 2,
-    "title": "What causes a buffer overflow?",
-    "image": null,
-    "options": [
-      "Launching a security countermeasure to mitigate a Trojan horse",
-      "Downloading and installing too many software updates at one time",
-      "Attempting to write more data to a memory location than that location can hold",
-      "Sending too much information to two or more interfaces of the same device, thereby causing dropped packets",
-      "Sending repeated connections such as Telnet to a particular device, thus denying other data sources"
-    ],
-    "answer": "Attempting to write more data to a memory location than that location can hold",
-    "explanation": ""
-  },
-  {
-    "index": 3,
-    "title": "Which objective of secure communications is achieved by encrypting data?",
-    "image": null,
-    "options": [
-      "Authentication",
-      "Availability",
-      "Confidentiality",
-      "Integrity"
-    ],
-    "answer": "Confidentiality",
-    "explanation": "When data is encrypted, it is scrambled to keep the data private and confidential so that only authorized recipients can read the message. A hash function is another way of providing confidentiality."
-  },
-  {
-    "index": 4,
-    "title": "What type of malware has the primary objective of spreading across the network?",
-    "image": null,
-    "options": [
-      "Worm",
-      "Virus",
-      "Trojan Horse",
-      "Botnet"
-    ],
-    "answer": "Worm",
-    "explanation": ""
-  },
-  {
-    "index": 5,
-    "title": "What commonly motivates cybercriminals to attack networks as compared to hacktivists or state-sponsored hackers?",
-    "image": null,
-    "options": [
-      "Financial Gain",
-      "Fame Seeking",
-      "Status Among Peers",
-      "Political Reasons"
-    ],
-    "answer": "Financial Gain",
-    "explanation": "Cybercriminals are commonly motivated by money. Hackers are known to hack for status, while cyberterrorists may act for religious or political reasons."
-  },
-  {
-    "index": 6,
-    "title": "Which type of hacker is motivated to protest against political and social issues?",
-    "image": null,
-    "options": [
-      "Hacktivist",
-      "Cybercriminal",
-      "Script Kiddie",
-      "Vulnerability Broker"
-    ],
-    "answer": "Hacktivist",
-    "explanation": "Hackers are categorized by motivating factors. Hacktivists are motivated by protesting political and social issues."
-  },
-  {
-    "index": 7,
-    "title": "What is a ping sweep?",
-    "image": null,
-    "options": [
-      "A query and response protocol that identifies information about a domain, including the addresses that are assigned to that domain.",
-      "A scanning technique that examines a range of TCP or UDP port numbers on a host to detect listening services.",
-      "A software application that enables the capture of all network packets that are sent across a LAN.",
-      "A network scanning technique that indicates the live hosts in a range of IP addresses."
-    ],
-    "answer": "A network scanning technique that indicates the live hosts in a range of IP addresses.",
-    "explanation": "A ping sweep is a tool used during reconnaissance attacks to gather information about a network."
-  },
-  {
-    "index": 8,
-    "title": "In what type of attack is a cybercriminal attempting to prevent legitimate users from accessing network services?",
-    "image": null,
-    "options": [
-      "Address Spoofing",
-      "MITM",
-      "Session Hijacking",
-      "DoS"
-    ],
-    "answer": "DoS",
-    "explanation": "In a DoS or denial-of-service attack, the attacker’s goal is to prevent legitimate users from accessing network services."
-  },
-  {
-    "index": 9,
-    "title": "Which requirement of secure communications is ensured by the implementation of MD5 or SHA hash generating algorithms?",
-    "image": null,
-    "options": [
-      "Nonrepudiation",
-      "Authentication",
-      "Integrity",
-      "Confidentiality"
-    ],
-    "answer": "Integrity",
-    "explanation": "Integrity is ensured by implementing either MD5 or SHA hash generating algorithms. Authentication and confidentiality are handled with other protocols and encryption methods."
-  },
-  {
-    "index": 10,
-    "title": "If an asymmetric algorithm uses a public key to encrypt data, what is used to decrypt it?",
-    "image": null,
-    "options": [
-      "A digital certificate",
-      "A different public key",
-      "A private key",
-      "DH"
-    ],
-    "answer": "A private key",
-    "explanation": "In asymmetric encryption, if a public key encrypts the data, only the corresponding private key can decrypt it."
-  },
-  {
-    "index": 11,
     "title": "Refer to the exhibit. Which two ACLs would permit only the two LAN networks attached to R1 to access the network that connects to R2 G0/1 interface? (Choose two.)",
     "image": "3~5/image.png",
     "options": [
@@ -149,7 +17,7 @@
     "explanation": "The two ACEs of permit 192.168.10.0 0.0.0.63 and permit 192.168.10.64 0.0.0.63 allow access through the router."
   },
   {
-    "index": 12,
+    "index": 2,
     "title": "Which two packet filters could a network administrator use on an IPv4 extended ACL? (Choose two.)",
     "image": null,
     "options": [
@@ -166,7 +34,7 @@
     "explanation": "Extended ACLs can filter on source/destination addresses and TCP/UDP port numbers; additional filtering for protocol types is possible."
   },
   {
-    "index": 13,
+    "index": 3,
     "title": "What type of ACL offers greater flexibility and control over network access?",
     "image": null,
     "options": [
@@ -179,7 +47,7 @@
     "explanation": "Extended ACLs offer greater flexibility and control over filtering network traffic."
   },
   {
-    "index": 14,
+    "index": 4,
     "title": "What is the quickest way to remove a single ACE from a named ACL?",
     "image": null,
     "options": [
@@ -192,7 +60,7 @@
     "explanation": "Named ACL ACEs can be removed using the no command followed by the sequence number."
   },
   {
-    "index": 15,
+    "index": 5,
     "title": "Refer to the exhibit. A network administrator is configuring a standard IPv4 ACL. What is the effect after the command no access-list 10 is entered?",
     "image": "3~5/image-1.png",
     "options": [
@@ -205,7 +73,7 @@
     "explanation": "The no access-list command removes the ACL from the running configuration immediately."
   },
   {
-    "index": 16,
+    "index": 6,
     "title": "Refer to the exhibit. A network administrator has configured ACL 9 as shown. Users on the 172.31.1.0 /24 network cannot forward traffic through router CiscoVille. What is the most likely cause of the traffic failure?",
     "image": "3~5/image-2.png",
     "options": [
@@ -218,7 +86,7 @@
     "explanation": "The sequence of ACEs needs modification to permit specific traffic from network 172.31.1.0 /24."
   },
   {
-    "index": 17,
+    "index": 7,
     "title": "A network administrator needs to configure a standard ACL so that only the workstation of the administrator with the IP address 192.168.15.23 can access the virtual terminal of the main router. Which two configuration commands can achieve the task? (Choose two.)",
     "image": null,
     "options": [
@@ -235,7 +103,7 @@
     "explanation": "The wildcard mask 0.0.0.0 or the host keyword allows filtering for a specific IP address."
   },
   {
-    "index": 18,
+    "index": 8,
     "title": "Refer to the exhibit. Which command would be used in a standard ACL to allow only devices on the network attached to R2 G0/0 interface to access the networks attached to R1?",
     "image": "3~5/image-3.png",
     "options": [
@@ -248,7 +116,7 @@
     "explanation": "The correct ACL is access-list 1 permit 192.168.10.96 0.0.0.31 for the R2 G0/0 network."
   },
   {
-    "index": 19,
+    "index": 9,
     "title": "A network administrator is writing a standard ACL that will deny any traffic from the 172.16.0.0/16 network, but permit all other traffic. Which two commands should be used? (Choose two.)",
     "image": null,
     "options": [
@@ -265,7 +133,7 @@
     "explanation": "Use access-list 95 deny 172.16.0.0 0.0.255.255 to deny the 172.16.0.0/16 network and access-list 95 permit any to allow all other traffic."
   },
   {
-    "index": 20,
+    "index": 10,
     "title": "Refer to the exhibit. An ACL was configured on R1 with the intention of denying traffic from subnet 172.16.4.0/24 into subnet 172.16.3.0/24. All other traffic into subnet 172.16.3.0/24 should be permitted. This standard ACL was then applied outbound on interface Fa0/0. Which conclusion can be drawn from this configuration?",
     "image": "3~5/image-4.png",
     "options": [
@@ -279,7 +147,7 @@
     "explanation": "An implicit deny exists at the end of all ACLs, so the access-list 1 permit any command ensures only 172.16.4.0/24 is blocked."
   },
   {
-    "index": 21,
+    "index": 11,
     "title": "Refer to the exhibit. A network administrator needs to add an ACE to the TRAFFIC-CONTROL ACL that will deny IP traffic from the subnet 172.23.16.0/20. Which ACE will meet this requirement?",
     "image": "3~5/image-5.png",
     "options": [
@@ -292,7 +160,7 @@
     "explanation": "The router parses ACEs from lowest to highest sequence number, so the entry with 5 deny is needed."
   },
   {
-    "index": 22,
+    "index": 12,
     "title": "Refer to the exhibit. A network administrator configures an ACL on the router. Which statement describes the result of the configuration?",
     "image": "3~5/image-6.png",
     "options": [
@@ -305,7 +173,7 @@
     "explanation": "In extended ACLs, the first address is the source IP and the second is the destination. Port 22 is for SSH, while Telnet uses port 23."
   },
   {
-    "index": 23,
+    "index": 13,
     "title": "Refer to the exhibit. What can be determined from this output?",
     "image": "3~5/image-7.png",
     "options": [
@@ -318,7 +186,7 @@
     "explanation": "The lack of matches for ACE 10 means that no Telnet packets have matched its conditions."
   },
   {
-    "index": 24,
+    "index": 14,
     "title": "Refer to the exhibit. A network administrator wants to permit only host 192.168.1.1 /24 to be able to access the server 192.168.2.1 /24. Which three commands will achieve this using best ACL placement practices? (Choose three.)",
     "image": "3~5/image-8.png",
     "options": [
@@ -338,7 +206,7 @@
     "explanation": "Place the ACL as close to the source of traffic as possible for better traffic control and minimal network overhead."
   },
   {
-    "index": 25,
+    "index": 15,
     "title": "Consider the following access list. access-list 100 permit ip host 192.168.10.1 any access-list 100 deny icmp 192.168.10.0 0.0.0.255 any echo access-list 100 permit ip any any Which two actions are taken if the access list is placed inbound on a router Gigabit Ethernet port that has the IP address 192.168.10.254 assigned? (Choose two.)",
     "image": null,
     "options": [
@@ -356,7 +224,7 @@
     "explanation": ""
   },
   {
-    "index": 26,
+    "index": 16,
     "title": "Refer to the exhibit. The named ACL “Managers” already exists on the router. What will happen when the network administrator issues the commands that are shown in the exhibit?",
     "image": "3~5/image-9.png",
     "options": [
@@ -369,33 +237,7 @@
     "explanation": ""
   },
   {
-    "index": 27,
-    "title": "In which TCP attack is the cybercriminal attempting to overwhelm a target host with half-open TCP connections?",
-    "image": null,
-    "options": [
-      "port scan attack",
-      "SYN flood attack",
-      "session hijacking attack",
-      "reset attack"
-    ],
-    "answer": "SYN flood attack",
-    "explanation": "In a TCP SYN flood attack, the attacker sends to the target host a continuous flood of TCP SYN session requests with a spoofed source IP address. The target host responds with a TCP-SYN-ACK to each of the SYN session requests and waits for a TCP ACK that will never arrive. Eventually the target is overwhelmed with half-open TCP connections."
-  },
-  {
-    "index": 28,
-    "title": "Which protocol is attacked when a cybercriminal provides an invalid gateway in order to create a man-in-the-middle attack?",
-    "image": null,
-    "options": [
-      "DHCP",
-      "DNS",
-      "ICMP",
-      "HTTP or HTTPS"
-    ],
-    "answer": "DHCP",
-    "explanation": "A cybercriminal could set up a rogue DHCP server that provides one or more of the following:"
-  },
-  {
-    "index": 29,
+    "index": 17,
     "title": "Refer to the exhibit. An administrator has configured a standard ACL on R1 and applied it to interface serial 0/0/0 in the outbound direction. What happens to traffic leaving interface serial 0/0/0 that does not match the configured ACL statements?",
     "image": "3~5/image-10.png",
     "options": [
@@ -408,7 +250,7 @@
     "explanation": "Any traffic that does not match one of the statements in an ACL has the implicit deny applied to it, which means the traffic is dropped."
   },
   {
-    "index": 30,
+    "index": 18,
     "title": "Refer to the exhibit. The Gigabit interfaces on both routers have been configured with subinterface numbers that match the VLAN numbers connected to them. PCs on VLAN 10 should be able to print to the P1 printer on VLAN 12. PCs on VLAN 20 should print to the printers on VLAN 22. What interface and in what direction should you place a standard ACL that allows printing to P1 from data VLAN 10, but stops the PCs on VLAN 20 from using the P1 printer? (Choose two.)",
     "image": "3~5/image-11.png",
     "options": [
@@ -426,7 +268,7 @@
     "explanation": ""
   },
   {
-    "index": 31,
+    "index": 19,
     "title": "Which statement describes a characteristic of standard IPv4 ACLs?",
     "image": null,
     "options": [
@@ -439,7 +281,7 @@
     "explanation": "A standard IPv4 ACL can filter traffic based on source IP addresses only. Unlike an extended ACL, it cannot filter traffic based on Layer 4 ports. However, both standard and extended ACLs can be identified with either a number or a name, and both are configured in global configuration mode."
   },
   {
-    "index": 32,
+    "index": 20,
     "title": "What is considered a best practice when configuring ACLs on vty lines?",
     "image": null,
     "options": [
@@ -452,7 +294,7 @@
     "explanation": ""
   },
   {
-    "index": 33,
+    "index": 21,
     "title": "Refer to the exhibit. An administrator first configured an extended ACL as shown by the output of the show access-lists command. The administrator then edited this access-list by issuing the commands below. Router(config)# ip access-list extended 101 Router(config-ext-nacl)# no 20 Router(config-ext-nacl)# 5 permit tcp any any eq 22 Router(config-ext-nacl)# 20 deny udp any any Which two conclusions can be drawn from this new configuration?​ (Choose two.)",
     "image": "3~5/image-12.png",
     "options": [
@@ -469,7 +311,7 @@
     "explanation": "After the editing, the final configuration is as follows:"
   },
   {
-    "index": 34,
+    "index": 22,
     "title": "Which set of access control entries would allow all users on the 192.168.10.0/24 network to access a web server that is located at 172.17.80.1, but would not allow them to use Telnet?",
     "image": null,
     "options": [
@@ -482,20 +324,7 @@
     "explanation": "For an extended ACL to meet these requirements the following need to be included in the access control entries:"
   },
   {
-    "index": 35,
-    "title": "What is the term used to describe a mechanism that takes advantage of a vulnerability?",
-    "image": null,
-    "options": [
-      "mitigation",
-      "exploit",
-      "vulnerability",
-      "threat"
-    ],
-    "answer": "exploit",
-    "explanation": ""
-  },
-  {
-    "index": 36,
+    "index": 23,
     "title": "Refer to the exhibit. The network administrator has an IP address of 192.168.11.10 and needs access to manage R1. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-13.png",
     "options": [
@@ -508,7 +337,7 @@
     "explanation": ""
   },
   {
-    "index": 37,
+    "index": 24,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the any configuration option or command?",
     "image": null,
     "options": [
@@ -521,59 +350,7 @@
     "explanation": ""
   },
   {
-    "index": 38,
-    "title": "Which statement accurately characterizes the evolution of threats to network security?",
-    "image": null,
-    "options": [
-      "Internet architects planned for network security from the beginning.",
-      "Early Internet users often engaged in activities that would harm other users.",
-      "Internal threats can cause even greater damage than external threats.",
-      "Threats have become less sophisticated while the technical knowledge needed by an attacker has grown."
-    ],
-    "answer": "Internal threats can cause even greater damage than external threats.",
-    "explanation": ""
-  },
-  {
-    "index": 39,
-    "title": "A user receives a phone call from a person who claims to represent IT services and then asks that user for confirmation of username and password for auditing purposes. Which security threat does this phone call represent?",
-    "image": null,
-    "options": [
-      "spam",
-      "social engineering",
-      "DDoS",
-      "anonymous keylogging"
-    ],
-    "answer": "social engineering",
-    "explanation": ""
-  },
-  {
-    "index": 40,
-    "title": "In what way are zombies used in security attacks?",
-    "image": null,
-    "options": [
-      "They target specific individuals to gain corporate or personal information.",
-      "They probe a group of machines for open ports to learn which services are running.",
-      "They are maliciously formed code segments used to replace legitimate applications.",
-      "They are infected machines that carry out a DDoS attack."
-    ],
-    "answer": "They are infected machines that carry out a DDoS attack.",
-    "explanation": ""
-  },
-  {
-    "index": 41,
-    "title": "Which attack involves threat actors positioning themselves between a source and destination with the intent of transparently monitoring, capturing, and controlling the communication?",
-    "image": null,
-    "options": [
-      "man-in-the-middle attack",
-      "SYN flood attack",
-      "DoS attack",
-      "ICMP attack"
-    ],
-    "answer": "man-in-the-middle attack",
-    "explanation": ""
-  },
-  {
-    "index": 42,
+    "index": 25,
     "title": "Which two keywords can be used in an access control list to replace a wildcard mask or address and wildcard mask pair? (Choose two.)",
     "image": null,
     "options": [
@@ -591,7 +368,7 @@
     "explanation": ""
   },
   {
-    "index": 43,
+    "index": 26,
     "title": "Which statement describes a difference between the operation of inbound and outbound ACLs?",
     "image": null,
     "options": [
@@ -604,7 +381,7 @@
     "explanation": ""
   },
   {
-    "index": 44,
+    "index": 27,
     "title": "What effect would the Router1(config-ext-nacl)# permit tcp 172.16.4.0 0.0.0.255 any eq www command have when implemented inbound on the f0/0 interface?",
     "image": null,
     "options": [
@@ -617,7 +394,7 @@
     "explanation": ""
   },
   {
-    "index": 45,
+    "index": 28,
     "title": "Which ACE will permit a packet that originates from any network and is destined for a web server at 192.168.1.1?",
     "image": null,
     "options": [
@@ -630,7 +407,7 @@
     "explanation": ""
   },
   {
-    "index": 46,
+    "index": 29,
     "title": "Refer to the exhibit. A new network policy requires an ACL denying FTP and Telnet access to a Corp file server from all interns. The address of the file server is 172.16.1.15 and all interns are assigned addresses in the 172.18.200.0/24 network. After implementing the ACL, no one in the Corp network can access any of the servers. What is the problem?",
     "image": "3~5/image-14.png",
     "options": [
@@ -643,7 +420,7 @@
     "explanation": ""
   },
   {
-    "index": 47,
+    "index": 30,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the access-class 20 in configuration option or command?",
     "image": null,
     "options": [
@@ -656,20 +433,7 @@
     "explanation": ""
   },
   {
-    "index": 48,
-    "title": "What is the term used to describe the same pre-shared key or secret key, known by both the sender and receiver to encrypt and decrypt data?",
-    "image": null,
-    "options": [
-      "symmetric encryption algorithm",
-      "data integrity",
-      "exploit",
-      "risk"
-    ],
-    "answer": "symmetric encryption algorithm",
-    "explanation": ""
-  },
-  {
-    "index": 49,
+    "index": 31,
     "title": "Refer to the exhibit. Internet privileges for an employee have been revoked because of abuse but the employee still needs access to company resources. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-15.png",
     "options": [
@@ -682,7 +446,7 @@
     "explanation": ""
   },
   {
-    "index": 50,
+    "index": 32,
     "title": "Refer to the exhibit. The student on the H1 computer continues to launch an extended ping with expanded packets at the student on the H2 computer. The school network administrator wants to stop this behavior, but still allow both students access to web-based computer assignments. What would be the best plan for the network administrator?",
     "image": "3~5/image-16.png",
     "options": [
@@ -696,7 +460,7 @@
     "explanation": ""
   },
   {
-    "index": 51,
+    "index": 33,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the ‘ip access-group 101 in’ configuration option or command?",
     "image": null,
     "options": [
@@ -709,46 +473,7 @@
     "explanation": ""
   },
   {
-    "index": 52,
-    "title": "In which type of attack is falsified information used to redirect users to malicious Internet sites?",
-    "image": null,
-    "options": [
-      "DNS amplification and reflection",
-      "ARP cache poisoning",
-      "DNS cache poisoning",
-      "domain generation"
-    ],
-    "answer": "DNS cache poisoning",
-    "explanation": ""
-  },
-  {
-    "index": 53,
-    "title": "What is a feature of an IPS?",
-    "image": null,
-    "options": [
-      "It can stop malicious packets.",
-      "It is deployed in offline mode.",
-      "It has no impact on latency.",
-      "It is primarily focused on identifying possible incidents."
-    ],
-    "answer": "It can stop malicious packets.",
-    "explanation": ""
-  },
-  {
-    "index": 54,
-    "title": "What is the term used to describe a potential danger to a company’s assets, data, or network functionality?",
-    "image": null,
-    "options": [
-      "vulnerability",
-      "threat",
-      "asset",
-      "exploit"
-    ],
-    "answer": "threat",
-    "explanation": ""
-  },
-  {
-    "index": 55,
+    "index": 34,
     "title": "Refer to the exhibit. Network 192.168.30.0/24 contains all of the company servers. Policy dictates that traffic from the servers to both networks 192.168.10.0 and 192.168.11.0 be limited to replies for original requests. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-17.png",
     "options": [
@@ -761,7 +486,7 @@
     "explanation": ""
   },
   {
-    "index": 56,
+    "index": 35,
     "title": "What does the CLI prompt change to after entering the command ip access-list standard aaa from global configuration mode?",
     "image": null,
     "options": [
@@ -775,7 +500,7 @@
     "explanation": ""
   },
   {
-    "index": 57,
+    "index": 36,
     "title": "Refer to the exhibit. Many employees are wasting company time accessing social media on their work computers. The company wants to stop this access. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-18.png",
     "options": [
@@ -788,7 +513,7 @@
     "explanation": ""
   },
   {
-    "index": 58,
+    "index": 37,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the 40 deny host 192.168.23.8 configuration option or command?",
     "image": null,
     "options": [
@@ -801,20 +526,7 @@
     "explanation": ""
   },
   {
-    "index": 59,
-    "title": "What is the best description of Trojan horse malware?",
-    "image": null,
-    "options": [
-      "It is malware that can only be distributed over the Internet.",
-      "It appears as useful software but hides malicious code.",
-      "It is software that causes annoying but not fatal computer problems.",
-      "It is the most easily detected form of malware."
-    ],
-    "answer": "It appears as useful software but hides malicious code.",
-    "explanation": ""
-  },
-  {
-    "index": 60,
+    "index": 38,
     "title": "What wild card mask will match networks 172.16.0.0 through 172.19.0.0?",
     "image": null,
     "options": [
@@ -827,20 +539,7 @@
     "explanation": ""
   },
   {
-    "index": 61,
-    "title": "What is the term used to describe gray hat hackers who publicly protest organizations or governments by posting articles, videos, leaking sensitive information, and performing network attacks?",
-    "image": null,
-    "options": [
-      "white hat hackers",
-      "grey hat hackers",
-      "hacktivists",
-      "state-sponsored hacker"
-    ],
-    "answer": "hacktivists",
-    "explanation": ""
-  },
-  {
-    "index": 62,
+    "index": 39,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the no ip access-list 101 configuration option or command?",
     "image": null,
     "options": [
@@ -853,33 +552,7 @@
     "explanation": ""
   },
   {
-    "index": 63,
-    "title": "What is the term used to describe unethical criminals who compromise computer and network security for personal gain, or for malicious reasons?",
-    "image": null,
-    "options": [
-      "hacktivists",
-      "vulnerability broker",
-      "black hat hackers",
-      "script kiddies"
-    ],
-    "answer": "black hat hackers",
-    "explanation": ""
-  },
-  {
-    "index": 64,
-    "title": "What is the term used to describe a guarantee that the message is not a forgery and does actually come from whom it states?",
-    "image": null,
-    "options": [
-      "origin authentication",
-      "mitigation",
-      "exploit",
-      "data non-repudiation"
-    ],
-    "answer": "origin authentication",
-    "explanation": ""
-  },
-  {
-    "index": 65,
+    "index": 40,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the ip access-group 101 in configuration option or command?",
     "image": null,
     "options": [
@@ -892,7 +565,7 @@
     "explanation": ""
   },
   {
-    "index": 66,
+    "index": 41,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the remark configuration option or command?",
     "image": null,
     "options": [
@@ -905,7 +578,7 @@
     "explanation": ""
   },
   {
-    "index": 67,
+    "index": 42,
     "title": "Refer to the exhibit. The company CEO demands that one ACL be created to permit email traffic to the internet and deny FTP access. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-19.png",
     "options": [
@@ -918,7 +591,7 @@
     "explanation": ""
   },
   {
-    "index": 68,
+    "index": 43,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the established configuration option or command?",
     "image": null,
     "options": [
@@ -931,7 +604,7 @@
     "explanation": ""
   },
   {
-    "index": 69,
+    "index": 44,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the deny configuration option or command?",
     "image": null,
     "options": [
@@ -944,7 +617,7 @@
     "explanation": ""
   },
   {
-    "index": 70,
+    "index": 45,
     "title": "Refer to the exhibit. Only authorized remote users are allowed remote access to the company server 192.168.30.10. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-20.png",
     "options": [
@@ -957,7 +630,7 @@
     "explanation": ""
   },
   {
-    "index": 71,
+    "index": 46,
     "title": "Refer to the exhibit. Employees on 192.168.11.0/24 work on critically sensitive information and are not allowed access off their network. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-21.png",
     "options": [
@@ -970,7 +643,7 @@
     "explanation": ""
   },
   {
-    "index": 72,
+    "index": 47,
     "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the host configuration option or command?",
     "image": null,
     "options": [
@@ -983,20 +656,7 @@
     "explanation": ""
   },
   {
-    "index": 73,
-    "title": "What commonly motivates cybercriminals to attack networks as compared to hacktivists or state-sponsored hackers?",
-    "image": null,
-    "options": [
-      "financial gain",
-      "political reasons",
-      "fame seeking",
-      "status among peers"
-    ],
-    "answer": "financial gain",
-    "explanation": ""
-  },
-  {
-    "index": 74,
+    "index": 48,
     "title": "Refer to the exhibit. The company has provided IP phones to employees on the 192.168.10.0/24 network and the voice traffic will need priority over data traffic. What is the best ACL type and placement to use in this situation?",
     "image": "3~5/image-22.png",
     "options": [
@@ -1009,7 +669,7 @@
     "explanation": ""
   },
   {
-    "index": 75,
+    "index": 49,
     "title": "What is a function of OSPF hello packets?",
     "image": null,
     "options": [
@@ -1022,7 +682,7 @@
     "explanation": ""
   },
   {
-    "index": 76,
+    "index": 50,
     "title": "Which OSPF packet contains the different types of link-state advertisements?",
     "image": null,
     "options": [
@@ -1036,7 +696,7 @@
     "explanation": ""
   },
   {
-    "index": 77,
+    "index": 51,
     "title": "Which three statements describe features of the OSPF topology table? (Choose three.)",
     "image": null,
     "options": [
@@ -1055,7 +715,7 @@
     "explanation": ""
   },
   {
-    "index": 78,
+    "index": 52,
     "title": "What does an OSPF area contain?",
     "image": null,
     "options": [
@@ -1068,7 +728,7 @@
     "explanation": ""
   },
   {
-    "index": 79,
+    "index": 53,
     "title": "What is used to facilitate hierarchical routing in OSPF?",
     "image": null,
     "options": [
@@ -1081,7 +741,7 @@
     "explanation": ""
   },
   {
-    "index": 80,
+    "index": 54,
     "title": "Which OSPF data structure is identical on all OSPF routers that share the same area?",
     "image": null,
     "options": [
@@ -1094,7 +754,7 @@
     "explanation": ""
   },
   {
-    "index": 81,
+    "index": 55,
     "title": "WWhich step does an OSPF-enabled router take immediately after establishing an adjacency with another router?",
     "image": null,
     "options": [
@@ -1107,7 +767,7 @@
     "explanation": ""
   },
   {
-    "index": 82,
+    "index": 56,
     "title": "A network engineer has manually configured the hello interval to 15 seconds on an interface of a router that is running OSPFv2. By default, how will the dead interval on the interface be affected?",
     "image": null,
     "options": [
@@ -1120,7 +780,7 @@
     "explanation": ""
   },
   {
-    "index": 83,
+    "index": 57,
     "title": "Refer to the exhibit. A network administrator has configured the OSPF timers to the values that are shown in the graphic. What is the result of having those manually configured timers?",
     "image": null,
     "options": [
@@ -1133,7 +793,7 @@
     "explanation": ""
   },
   {
-    "index": 84,
+    "index": 58,
     "title": "To establish a neighbor adjacency two OSPF routers will exchange hello packets. Which two values in the hello packets must match on both routers? (Choose two.)",
     "image": null,
     "options": [
@@ -1150,7 +810,7 @@
     "explanation": ""
   },
   {
-    "index": 85,
+    "index": 59,
     "title": "What is the default router priority value for all Cisco OSPF routers?",
     "image": null,
     "options": [
@@ -1163,7 +823,7 @@
     "explanation": ""
   },
   {
-    "index": 86,
+    "index": 60,
     "title": "Which type of OSPFv2 packet contains an abbreviated list of the LSDB of a sending router and is used by receiving routers to check against the local LSDB?",
     "image": null,
     "options": [
@@ -1176,7 +836,7 @@
     "explanation": ""
   },
   {
-    "index": 87,
+    "index": 61,
     "title": "In an OSPF network when are DR and BDR elections required?",
     "image": null,
     "options": [
@@ -1189,7 +849,7 @@
     "explanation": ""
   },
   {
-    "index": 88,
+    "index": 62,
     "title": "When an OSPF network is converged and no network topology change has been detected by a router, how often will LSU packets be sent to neighboring routers?",
     "image": null,
     "options": [
@@ -1202,7 +862,7 @@
     "explanation": ""
   },
   {
-    "index": 89,
+    "index": 63,
     "title": "What will an OSPF router prefer to use first as a router ID?",
     "image": null,
     "options": [
@@ -1215,7 +875,7 @@
     "explanation": ""
   },
   {
-    "index": 90,
+    "index": 64,
     "title": "What are the two purposes of an OSPF router ID? (Choose two.)",
     "image": null,
     "options": [
@@ -1232,7 +892,7 @@
     "explanation": ""
   },
   {
-    "index": 91,
+    "index": 65,
     "title": "Refer to the exhibit. If no router ID was manually configured, what would router Branch1 use as its OSPF router ID?",
     "image": "3~5/image-23.png",
     "options": [
@@ -1245,7 +905,7 @@
     "explanation": ""
   },
   {
-    "index": 92,
+    "index": 66,
     "title": "A network technician issues the following commands when configuring a router: \\n R1(config)# router ospf 11 \\n R1(config-router)# network 10.10.10.0 0.0.0.255 area 0 \\n What does the number 11 represent?",
     "image": null,
     "options": [
@@ -1259,7 +919,7 @@
     "explanation": ""
   },
   {
-    "index": 93,
+    "index": 67,
     "title": "An OSPF router has three directly connected networks; 172.16.0.0/16, 172.16.1.0/16, and 172.16.2.0/16. Which OSPF network command would advertise only the 172.16.1.0 network to neighbors?",
     "image": null,
     "options": [
@@ -1272,7 +932,7 @@
     "explanation": ""
   },
   {
-    "index": 94,
+    "index": 68,
     "title": "Refer to the exhibit. Which three statements describe the results of the OSPF election process of the topology that is shown in the exhibit? (Choose three.)",
     "image": "3~5/_image.png",
     "options": [
@@ -1291,7 +951,7 @@
     "explanation": ""
   },
   {
-    "index": 95,
+    "index": 69,
     "title": "Refer to the exhibit. If the switch reboots and all routers have to re-establish OSPF adjacencies, which routers will become the new DR and BDR?",
     "image": "3~5/_image-1.png",
     "options": [
@@ -1304,7 +964,7 @@
     "explanation": ""
   },
   {
-    "index": 96,
+    "index": 70,
     "title": "By default, what is the OSPF cost for any link with a bandwidth of 100 Mb/s or greater?",
     "image": null,
     "options": [
@@ -1317,7 +977,7 @@
     "explanation": ""
   },
   {
-    "index": 97,
+    "index": 71,
     "title": "Refer to the exhibit. What is the OSPF cost to reach the router A LAN 172.16.1.0/24 from B?",
     "image": "3~5/_image-2.png",
     "options": [
@@ -1330,7 +990,7 @@
     "explanation": ""
   },
   {
-    "index": 98,
+    "index": 72,
     "title": "Refer to the exhibit. On which router or routers would a default route be statically configured in a corporate environment that uses single area OSPF as the routing protocol?",
     "image": "3~5/_image-3.png",
     "options": [
@@ -1345,7 +1005,7 @@
     "explanation": ""
   },
   {
-    "index": 99,
+    "index": 73,
     "title": "What command would be used to determine if a routing protocol-initiated relationship had been made with an adjacent router?",
     "image": null,
     "options": [
@@ -1358,7 +1018,7 @@
     "explanation": ""
   },
   {
-    "index": 100,
+    "index": 74,
     "title": "Refer to the exhibit. Which command did an administrator issue to produce this output?",
     "image": "3~5/_image-4.png",
     "options": [
@@ -1371,7 +1031,7 @@
     "explanation": ""
   },
   {
-    "index": 101,
+    "index": 75,
     "title": "Which command is used to verify that OSPF is enabled and also provides a list of the networks that are being advertised by the network?​",
     "image": null,
     "options": [
@@ -1384,7 +1044,7 @@
     "explanation": ""
   },
   {
-    "index": 102,
+    "index": 76,
     "title": "Refer to the exhibit. A network administrator has configured OSPFv2 on the two Cisco routers but PC1 is unable to connect to PC2. What is the most likely problem?",
     "image": "3~5/_image-5.png",
     "options": [
@@ -1397,7 +1057,7 @@
     "explanation": ""
   },
   {
-    "index": 103,
+    "index": 77,
     "title": "What is the recommended Cisco best practice for configuring an OSPF-enabled router so that each router can be easily identified when troubleshooting routing issues?",
     "image": null,
     "options": [
@@ -1410,7 +1070,7 @@
     "explanation": ""
   },
   {
-    "index": 104,
+    "index": 78,
     "title": "Which step in the link-state routing process is described by a router running an algorithm to determine the best path to each destination?",
     "image": null,
     "options": [
@@ -1423,7 +1083,7 @@
     "explanation": ""
   },
   {
-    "index": 105,
+    "index": 79,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 192.168.223.0 255.255.254.0. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1436,7 +1096,7 @@
     "explanation": ""
   },
   {
-    "index": 106,
+    "index": 80,
     "title": "What is the format of the router ID on an OSPF-enabled router?",
     "image": null,
     "options": [
@@ -1450,7 +1110,7 @@
     "explanation": ""
   },
   {
-    "index": 107,
+    "index": 81,
     "title": "After modifying the router ID on an OSPF router, what is the preferred method to make the new router ID effective?",
     "image": null,
     "options": [
@@ -1463,7 +1123,7 @@
     "explanation": ""
   },
   {
-    "index": 108,
+    "index": 82,
     "title": "In an OSPFv2 configuration, what is the effect of entering the command network 192.168.1.1 0.0.0.0 area 0 ?",
     "image": null,
     "options": [
@@ -1476,7 +1136,7 @@
     "explanation": ""
   },
   {
-    "index": 109,
+    "index": 83,
     "title": "What is the reason for a network engineer to alter the default reference bandwidth parameter when configuring OSPF?",
     "image": null,
     "options": [
@@ -1489,7 +1149,7 @@
     "explanation": ""
   },
   {
-    "index": 110,
+    "index": 84,
     "title": "Open the PT Activity. Perform the tasks in the activity instructions and then answer the question. Which task has to be performed on Router 1 for it to establish an OSPF adjacency with Router 2?",
     "image": "3~5/_image-6.png",
     "options": [
@@ -1502,7 +1162,7 @@
     "explanation": ""
   },
   {
-    "index": 111,
+    "index": 85,
     "title": "Match the description to the term. (Not all options are used.)",
     "image": "3~5/_image-7.png",
     "options": [
@@ -1515,7 +1175,7 @@
     "explanation": ""
   },
   {
-    "index": 112,
+    "index": 86,
     "title": "What is a benefit of multiarea OSPF routing?",
     "image": null,
     "options": [
@@ -1528,7 +1188,7 @@
     "explanation": ""
   },
   {
-    "index": 113,
+    "index": 87,
     "title": "Match the OSPF state with the order in which it occurs. (Not all options are used.)",
     "image": "3~5/_image-8.png",
     "options": [
@@ -1541,7 +1201,7 @@
     "explanation": ""
   },
   {
-    "index": 114,
+    "index": 88,
     "title": "What indicates to a link-state router that a neighbor is unreachable?",
     "image": null,
     "options": [
@@ -1554,7 +1214,7 @@
     "explanation": ""
   },
   {
-    "index": 115,
+    "index": 89,
     "title": "Which three OSPF states are involved when two routers are forming an adjacency? (Choose three.)",
     "image": null,
     "options": [
@@ -1573,7 +1233,7 @@
     "explanation": ""
   },
   {
-    "index": 116,
+    "index": 90,
     "title": "Refer to the exhibit. Suppose that routers B, C, and D have a default priority, and router A has a priority 0. Which conclusion can be drawn from the DR/BDR election process?​",
     "image": "3~5/_image-9.png",
     "options": [
@@ -1586,7 +1246,7 @@
     "explanation": ""
   },
   {
-    "index": 117,
+    "index": 91,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 64.102.0.0 255.255.255.128. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1599,7 +1259,7 @@
     "explanation": ""
   },
   {
-    "index": 118,
+    "index": 92,
     "title": "Which command will a network engineer issue to verify the configured hello and dead timer intervals on a point-to-point WAN link between two routers that are running OSPFv2?",
     "image": null,
     "options": [
@@ -1612,7 +1272,7 @@
     "explanation": ""
   },
   {
-    "index": 119,
+    "index": 93,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 128.107.0.0 255.255.255.192. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1625,7 +1285,7 @@
     "explanation": ""
   },
   {
-    "index": 120,
+    "index": 94,
     "title": "Match each OSPF packet type to how it is used by a router. (Not all options are used.)",
     "image": "3~5/_image-10.png",
     "options": [
@@ -1638,7 +1298,7 @@
     "explanation": ""
   },
   {
-    "index": 121,
+    "index": 95,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 192.168.181.0 255.255.254.0. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1651,7 +1311,7 @@
     "explanation": ""
   },
   {
-    "index": 122,
+    "index": 96,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 198.19.0.0 255.255.252.0. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1664,7 +1324,7 @@
     "explanation": ""
   },
   {
-    "index": 123,
+    "index": 97,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 128.107.0.0 255.255.252.0. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1677,7 +1337,7 @@
     "explanation": ""
   },
   {
-    "index": 124,
+    "index": 98,
     "title": "Which step in the link-state routing process is described by a router flooding link-state and cost information about each directly connected link?",
     "image": null,
     "options": [
@@ -1690,7 +1350,7 @@
     "explanation": ""
   },
   {
-    "index": 125,
+    "index": 99,
     "title": "Which step in the link-state routing process is described by a router sending Hello packets out all of the OSPF-enabled interfaces?",
     "image": null,
     "options": [
@@ -1703,7 +1363,7 @@
     "explanation": ""
   },
   {
-    "index": 126,
+    "index": 100,
     "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 64.100.0.0 255.255.255.0. What wildcard mask would the administrator use in the OSPF network statement?",
     "image": null,
     "options": [
@@ -1716,7 +1376,7 @@
     "explanation": ""
   },
   {
-    "index": 127,
+    "index": 101,
     "title": "Which step in the link-state routing process is described by a router inserting best paths into the routing table?",
     "image": null,
     "options": [
@@ -1729,7 +1389,7 @@
     "explanation": ""
   },
   {
-    "index": 128,
+    "index": 102,
     "title": "What type of address is 64.101.198.197?",
     "image": null,
     "options": [
@@ -1740,7 +1400,7 @@
     "explanation": ""
   },
   {
-    "index": 129,
+    "index": 103,
     "title": "An OSPF router has three directly connected networks; 172.16.0.0/24, 172.16.1.0/24, and 172.16.2.0/24. Which OSPF network command would advertise only the 172.16.1.0 network to neighbors?",
     "image": null,
     "options": [
@@ -1753,7 +1413,7 @@
     "explanation": ""
   },
   {
-    "index": 130,
+    "index": 104,
     "title": "Which step in the link-state routing process is described by a router building a link-state database based on received LSAs?",
     "image": null,
     "options": [
