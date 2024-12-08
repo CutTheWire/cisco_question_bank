@@ -1,1395 +1,913 @@
 [
   {
     "index": 1,
-    "title": "Refer to the exhibit. Which two ACLs would permit only the two LAN networks attached to R1 to access the network that connects to R2 G0/1 interface? (Choose two.)",
-    "image": "3~5/image.png",
+    "title": "Which two statements accurately describe an advantage or a disadvantage when deploying NAT for IPv4 in a network? (Choose two.)",
+    "image": null,
     "options": [
-      "access-list 5 permit 192.168.10.0 0.0.0.63 & access-list 5 permit 192.168.10.64 0.0.0.63",
-      "access-list 2 permit host 192.168.10.9 & access-list 2 permit host 192.168.10.69",
-      "access-list 3 permit 192.168.10.128 0.0.0.63",
-      "access-list 4 permit 192.168.10.0 0.0.0.255",
-      "access-list 1 permit 192.168.10.0 0.0.0.127"
+      "NAT improves packet handling.",
+      "NAT adds authentication capability to IPv4.",
+      "NAT will impact negatively on switch performance.",
+      "NAT causes routing tables to include more information.",
+      "NAT provides a solution to slow down the IPv4 address depletion.",
+      "NAT introduces problems for some applications that require end-to-end connectivity."
     ],
     "answer": [
-      "access-list 5 permit 192.168.10.0 0.0.0.63 & access-list 5 permit 192.168.10.64 0.0.0.63",
-      "access-list 1 permit 192.168.10.0 0.0.0.127"
+      "NAT provides a solution to slow down the IPv4 address depletion.",
+      "NAT introduces problems for some applications that require end-to-end connectivity."
     ],
-    "explanation": "The two ACEs of permit 192.168.10.0 0.0.0.63 and permit 192.168.10.64 0.0.0.63 allow access through the router."
+    "explanation": ""
   },
   {
     "index": 2,
-    "title": "Which two packet filters could a network administrator use on an IPv4 extended ACL? (Choose two.)",
+    "title": "A network administrator wants to examine the active NAT translations on a border router. Which command would perform the task?",
     "image": null,
     "options": [
-      "Destination UDP Port Number",
-      "Computer Type",
-      "Destination MAC Address",
-      "ICMP Message Type",
-      "Source TCP Hello Address"
+      "Router# show ip nat translations",
+      "Router# show ip nat statistics",
+      "Router# clear ip nat translations",
+      "Router# debug ip nat translations"
     ],
-    "answer": [
-      "Destination UDP Port Number",
-      "ICMP Message Type"
-    ],
-    "explanation": "Extended ACLs can filter on source/destination addresses and TCP/UDP port numbers; additional filtering for protocol types is possible."
+    "answer": "Router# show ip nat translations",
+    "explanation": ""
   },
   {
     "index": 3,
-    "title": "What type of ACL offers greater flexibility and control over network access?",
+    "title": "What are two tasks to perform when configuring static NAT? (Choose two.)",
     "image": null,
     "options": [
-      "Numbered Standard",
-      "Named Standard",
-      "Extended",
-      "Flexible"
+      "Configure a NAT pool.",
+      "Create a mapping between the inside local and outside local addresses.",
+      "Identify the participating interfaces as inside or outside interfaces.",
+      "Define the inside global address on the server",
+      "Define the outside global address.",
+      "The outside global address will change for each destination the inside host will try to reach. A NAT pool is only configured for dynamic NAT implementations."
     ],
-    "answer": "Extended",
-    "explanation": "Extended ACLs offer greater flexibility and control over filtering network traffic."
+    "answer": [
+      "Create a mapping between the inside local and outside local addresses.",
+      "Identify the participating interfaces as inside or outside interfaces."
+    ],
+    "explanation": ""
   },
   {
     "index": 4,
-    "title": "What is the quickest way to remove a single ACE from a named ACL?",
+    "title": "What is a disadvantage of NAT?",
     "image": null,
     "options": [
-      "Use the no keyword and the sequence number of the ACE to be removed.",
-      "Copy the ACL into a text editor, remove the ACE, then copy the ACL back into the router.",
-      "Create a new ACL with a different number and apply the new ACL to the router interface.",
-      "Use the no access-list command to remove the entire ACL, then recreate it without the ACE."
+      "There is no end-to-end addressing.",
+      "The router does not need to alter the checksum of the IPv4 packets.​",
+      "The internal hosts have to use a single public IPv4 address for external communication.",
+      "The costs of readdressing hosts can be significant for a publicly addressed network.​"
     ],
-    "answer": "Use the no keyword and the sequence number of the ACE to be removed.",
-    "explanation": "Named ACL ACEs can be removed using the no command followed by the sequence number."
+    "answer": "There is no end-to-end addressing.",
+    "explanation": ""
   },
   {
     "index": 5,
-    "title": "Refer to the exhibit. A network administrator is configuring a standard IPv4 ACL. What is the effect after the command no access-list 10 is entered?",
-    "image": "3~5/image-1.png",
+    "title": "Refer to the exhibit. From the perspective of R1, the NAT router, which address is the inside global address?",
+    "image": "6~8/image-1.png",
     "options": [
-      "ACL 10 is removed from the running configuration.",
-      "ACL 10 is removed from both the running configuration and the interface Fa0/1.",
-      "ACL 10 is disabled on Fa0/1.",
-      "ACL 10 will be disabled and removed after R1 restarts."
+      "192.168.0.10",
+      "192.168.0.1",
+      "209.165.200.225",
+      "209.165.200.254"
     ],
-    "answer": "ACL 10 is removed from the running configuration.",
-    "explanation": "The no access-list command removes the ACL from the running configuration immediately."
+    "answer": "209.165.200.225",
+    "explanation": ""
   },
   {
     "index": 6,
-    "title": "Refer to the exhibit. A network administrator has configured ACL 9 as shown. Users on the 172.31.1.0 /24 network cannot forward traffic through router CiscoVille. What is the most likely cause of the traffic failure?",
-    "image": "3~5/image-2.png",
+    "title": "Refer to the exhibit. Given the commands as shown, how many hosts on the internal LAN off R1 can have simultaneous NAT translations on R1?",
+    "image": "6~8/image-2.png",
     "options": [
-      "The established keyword is not specified.",
-      "The sequence of the ACEs is incorrect.",
-      "The port number for the traffic has not been identified with the eq keyword.",
-      "The permit statement specifies an incorrect wildcard mask."
-    ],
-    "answer": "The sequence of the ACEs is incorrect.",
-    "explanation": "The sequence of ACEs needs modification to permit specific traffic from network 172.31.1.0 /24."
-  },
-  {
-    "index": 7,
-    "title": "A network administrator needs to configure a standard ACL so that only the workstation of the administrator with the IP address 192.168.15.23 can access the virtual terminal of the main router. Which two configuration commands can achieve the task? (Choose two.)",
-    "image": null,
-    "options": [
-      "Router1(config)# access-list 10 permit 192.168.15.23 0.0.0.0",
-      "Router1(config)# access-list 10 permit 192.168.15.23 0.0.0.255",
-      "Router1(config)# access-list 10 permit 192.168.15.23 255.255.255.255",
-      "Router1(config)# access-list 10 permit host 192.168.15.23",
-      "Router1(config)# access-list 10 permit 192.168.15.23 255.255.255.0"
-    ],
-    "answer": [
-      "Router1(config)# access-list 10 permit 192.168.15.23 0.0.0.0",
-      "Router1(config)# access-list 10 permit host 192.168.15.23"
-    ],
-    "explanation": "The wildcard mask 0.0.0.0 or the host keyword allows filtering for a specific IP address."
-  },
-  {
-    "index": 8,
-    "title": "Refer to the exhibit. Which command would be used in a standard ACL to allow only devices on the network attached to R2 G0/0 interface to access the networks attached to R1?",
-    "image": "3~5/image-3.png",
-    "options": [
-      "access-list 1 permit 192.168.10.128 0.0.0.63",
-      "access-list 1 permit 192.168.10.96 0.0.0.31",
-      "access-list 1 permit 192.168.10.0 0.0.0.255",
-      "access-list 1 permit 192.168.10.0 0.0.0.63"
-    ],
-    "answer": "access-list 1 permit 192.168.10.96 0.0.0.31",
-    "explanation": "The correct ACL is access-list 1 permit 192.168.10.96 0.0.0.31 for the R2 G0/0 network."
-  },
-  {
-    "index": 9,
-    "title": "A network administrator is writing a standard ACL that will deny any traffic from the 172.16.0.0/16 network, but permit all other traffic. Which two commands should be used? (Choose two.)",
-    "image": null,
-    "options": [
-      "Router(config)# access-list 95 deny 172.16.0.0 0.0.255.255",
-      "Router(config)# access-list 95 permit any",
-      "Router(config)# access-list 95 host 172.16.0.0",
-      "Router(config)# access-list 95 172.16.0.0 255.255.255.255",
-      "Router(config)# access-list 95 deny any"
-    ],
-    "answer": [
-      "Router(config)# access-list 95 deny 172.16.0.0 0.0.255.255",
-      "Router(config)# access-list 95 permit any"
-    ],
-    "explanation": "Use access-list 95 deny 172.16.0.0 0.0.255.255 to deny the 172.16.0.0/16 network and access-list 95 permit any to allow all other traffic."
-  },
-  {
-    "index": 10,
-    "title": "Refer to the exhibit. An ACL was configured on R1 with the intention of denying traffic from subnet 172.16.4.0/24 into subnet 172.16.3.0/24. All other traffic into subnet 172.16.3.0/24 should be permitted. This standard ACL was then applied outbound on interface Fa0/0. Which conclusion can be drawn from this configuration?",
-    "image": "3~5/image-4.png",
-    "options": [
-      "The ACL should be applied outbound on all interfaces of R1.",
-      "The ACL should be applied to the FastEthernet 0/0 interface of R1 inbound to accomplish the requirements.",
-      "All traffic will be blocked, not just traffic from the 172.16.4.0/24 subnet.",
-      "Only traffic from the 172.16.4.0/24 subnet is blocked, and all other traffic is allowed.",
-      "An extended ACL must be used in this situation."
-    ],
-    "answer": "All traffic will be blocked, not just traffic from the 172.16.4.0/24 subnet.",
-    "explanation": "An implicit deny exists at the end of all ACLs, so the access-list 1 permit any command ensures only 172.16.4.0/24 is blocked."
-  },
-  {
-    "index": 11,
-    "title": "Refer to the exhibit. A network administrator needs to add an ACE to the TRAFFIC-CONTROL ACL that will deny IP traffic from the subnet 172.23.16.0/20. Which ACE will meet this requirement?",
-    "image": "3~5/image-5.png",
-    "options": [
-      "30 deny 172.23.16.0 0.0.15.255",
-      "15 deny 172.23.16.0 0.0.15.255",
-      "5 deny 172.23.16.0 0.0.15.255",
-      "5 deny 172.23.16.0 0.0.255.255"
-    ],
-    "answer": "5 deny 172.23.16.0 0.0.15.255",
-    "explanation": "The router parses ACEs from lowest to highest sequence number, so the entry with 5 deny is needed."
-  },
-  {
-    "index": 12,
-    "title": "Refer to the exhibit. A network administrator configures an ACL on the router. Which statement describes the result of the configuration?",
-    "image": "3~5/image-6.png",
-    "options": [
-      "An SSH connection is allowed from a workstation with IP 172.16.45.16 to a device with IP 192.168.25.18.",
-      "An SSH connection is allowed from a workstation with IP 192.168.25.18 to a device with IP 172.16.45.16.",
-      "A Telnet connection is allowed from a workstation with IP 192.168.25.18 to a device with IP 172.16.45.16.",
-      "A Telnet connection is allowed from a workstation with IP 172.16.45.16 to a device with IP 192.168.25.18."
-    ],
-    "answer": "An SSH connection is allowed from a workstation with IP 172.16.45.16 to a device with IP 192.168.25.18.",
-    "explanation": "In extended ACLs, the first address is the source IP and the second is the destination. Port 22 is for SSH, while Telnet uses port 23."
-  },
-  {
-    "index": 13,
-    "title": "Refer to the exhibit. What can be determined from this output?",
-    "image": "3~5/image-7.png",
-    "options": [
-      "The ACL is missing the deny ip any any ACE.",
-      "The ACL is only monitoring traffic destined for 10.23.77.101 from three specific hosts.",
-      "Because there are no matches for line 10, the ACL is not working.",
-      "The router has not had any Telnet packets from 10.35.80.22 that are destined for 10.23.77.101."
-    ],
-    "answer": "The router has not had any Telnet packets from 10.35.80.22 that are destined for 10.23.77.101.",
-    "explanation": "The lack of matches for ACE 10 means that no Telnet packets have matched its conditions."
-  },
-  {
-    "index": 14,
-    "title": "Refer to the exhibit. A network administrator wants to permit only host 192.168.1.1 /24 to be able to access the server 192.168.2.1 /24. Which three commands will achieve this using best ACL placement practices? (Choose three.)",
-    "image": "3~5/image-8.png",
-    "options": [
-      "R2(config)# interface fastethernet 0/0",
-      "R2(config)# access-list 101 permit ip host 192.168.1.1 host 192.168.2.1",
-      "R2(config-if)# ip access-group 101 in",
-      "R2(config)# access-list 101 permit ip any any",
-      "R2(config)# access-list 101 permit ip 192.168.1.0 255.255.255.0 192.168.2.0 255.255.255.0",
-      "R2(config-if)# ip access-group 101 out",
-      "R2(config)# interface fastethernet 0/1"
-    ],
-    "answer": [
-      "R2(config)# interface fastethernet 0/0",
-      "R2(config)# access-list 101 permit ip host 192.168.1.1 host 192.168.2.1",
-      "R2(config-if)# ip access-group 101 in"
-    ],
-    "explanation": "Place the ACL as close to the source of traffic as possible for better traffic control and minimal network overhead."
-  },
-  {
-    "index": 15,
-    "title": "Consider the following access list. access-list 100 permit ip host 192.168.10.1 any access-list 100 deny icmp 192.168.10.0 0.0.0.255 any echo access-list 100 permit ip any any Which two actions are taken if the access list is placed inbound on a router Gigabit Ethernet port that has the IP address 192.168.10.254 assigned? (Choose two.)",
-    "image": null,
-    "options": [
-      "Only Layer 3 connections are allowed to be made from the router to any other network device.",
-      "Devices on the 192.168.10.0/24 network are not allowed to reply to any ping requests.",
-      "Devices on the 192.168.10.0/24 network can sucessfully ping devices on the 192.168.11.0 network.",
-      "A Telnet or SSH session is allowed from any device on the 192.168.10.0 into the router with this access list assigned.",
-      "Devices on the 192.168.10.0/24 network are allowed to reply to any ping requests.",
-      "Only the network device assigned the IP address 192.168.10.1 is allowed to access the router."
-    ],
-    "answer": [
-      "A Telnet or SSH session is allowed from any device on the 192.168.10.0 into the router with this access list assigned.",
-      "Devices on the 192.168.10.0/24 network are allowed to reply to any ping requests."
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 16,
-    "title": "Refer to the exhibit. The named ACL “Managers” already exists on the router. What will happen when the network administrator issues the commands that are shown in the exhibit?",
-    "image": "3~5/image-9.png",
-    "options": [
-      "The commands are added at the end of the existing Managers ACL.",
-      "The commands overwrite the existing Managers ACL.",
-      "The commands are added at the beginning of the existing Managers ACL.",
-      "The network administrator receives an error that states that the ACL already exists."
-    ],
-    "answer": "The commands are added at the end of the existing Managers ACL.",
-    "explanation": ""
-  },
-  {
-    "index": 17,
-    "title": "Refer to the exhibit. An administrator has configured a standard ACL on R1 and applied it to interface serial 0/0/0 in the outbound direction. What happens to traffic leaving interface serial 0/0/0 that does not match the configured ACL statements?",
-    "image": "3~5/image-10.png",
-    "options": [
-      "The traffic is dropped.",
-      "The source IP address is checked and, if a match is not found, traffic is routed out interface serial 0/0/1.",
-      "The resulting action is determined by the destination IP address.",
-      "The resulting action is determined by the destination IP address and port number"
-    ],
-    "answer": "The traffic is dropped.",
-    "explanation": "Any traffic that does not match one of the statements in an ACL has the implicit deny applied to it, which means the traffic is dropped."
-  },
-  {
-    "index": 18,
-    "title": "Refer to the exhibit. The Gigabit interfaces on both routers have been configured with subinterface numbers that match the VLAN numbers connected to them. PCs on VLAN 10 should be able to print to the P1 printer on VLAN 12. PCs on VLAN 20 should print to the printers on VLAN 22. What interface and in what direction should you place a standard ACL that allows printing to P1 from data VLAN 10, but stops the PCs on VLAN 20 from using the P1 printer? (Choose two.)",
-    "image": "3~5/image-11.png",
-    "options": [
-      "inbound",
-      "R2 S0/0/1",
-      "R1 Gi0/1.12",
-      "outbound",
-      "R1 S0/0/0",
-      "R2 Gi0/1.20"
-    ],
-    "answer": [
-      "R1 Gi0/1.12",
-      "outbound"
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 19,
-    "title": "Which statement describes a characteristic of standard IPv4 ACLs?",
-    "image": null,
-    "options": [
-      "They are configured in the interface configuration mode.",
-      "They can be configured to filter traffic based on both source IP addresses and source ports.",
-      "They can be created with a number but not with a name.",
-      "They filter traffic based on source IP addresses only."
-    ],
-    "answer": "They filter traffic based on source IP addresses only.",
-    "explanation": "A standard IPv4 ACL can filter traffic based on source IP addresses only. Unlike an extended ACL, it cannot filter traffic based on Layer 4 ports. However, both standard and extended ACLs can be identified with either a number or a name, and both are configured in global configuration mode."
-  },
-  {
-    "index": 20,
-    "title": "What is considered a best practice when configuring ACLs on vty lines?",
-    "image": null,
-    "options": [
-      "Place identical restrictions on all vty lines.",
-      "Remove the vty password since the ACL restricts access to trusted users.",
-      "Apply the ip access-group command inbound.",
-      "Use only extended access lists."
-    ],
-    "answer": "Place identical restrictions on all vty lines.",
-    "explanation": ""
-  },
-  {
-    "index": 21,
-    "title": "Refer to the exhibit. An administrator first configured an extended ACL as shown by the output of the show access-lists command. The administrator then edited this access-list by issuing the commands below. Router(config)# ip access-list extended 101 Router(config-ext-nacl)# no 20 Router(config-ext-nacl)# 5 permit tcp any any eq 22 Router(config-ext-nacl)# 20 deny udp any any Which two conclusions can be drawn from this new configuration?​ (Choose two.)",
-    "image": "3~5/image-12.png",
-    "options": [
-      "TFTP packets will be permitted.​",
-      "Ping packets will be permitted.",
-      "Telnet packets will be permitted.",
-      "SSH packets will be permitted.",
-      "All TCP and UDP packets will be denied.​"
-    ],
-    "answer": [
-      "Ping packets will be permitted.",
-      "SSH packets will be permitted."
-    ],
-    "explanation": "After the editing, the final configuration is as follows:"
-  },
-  {
-    "index": 22,
-    "title": "Which set of access control entries would allow all users on the 192.168.10.0/24 network to access a web server that is located at 172.17.80.1, but would not allow them to use Telnet?",
-    "image": null,
-    "options": [
-      "access-list 103 deny tcp host 192.168.10.0 any eq 23 & access-list 103 permit tcp host 192.168.10.1 eq 80",
-      "access-list 103 permit tcp 192.168.10.0 0.0.0.255 any eq 80 & access-list 103 deny tcp 192.168.10.0 0.0.0.255 any eq 23",
-      "access-list 103 permit 192.168.10.0 0.0.0.255 host 172.17.80.1 & access-list 103 deny tcp 192.168.10.0 0.0.0.255 any eq telnet​​",
-      "access-list 103 permit tcp 192.168.10.0 0.0.0.255 host 172.17.80.1 eq 80 & access-list 103 deny tcp ​192.168.10.0 0.0.0.255 any eq 23"
-    ],
-    "answer": "access-list 103 permit tcp 192.168.10.0 0.0.0.255 host 172.17.80.1 eq 80 & access-list 103 deny tcp ​192.168.10.0 0.0.0.255 any eq 23",
-    "explanation": "For an extended ACL to meet these requirements the following need to be included in the access control entries:"
-  },
-  {
-    "index": 23,
-    "title": "Refer to the exhibit. The network administrator has an IP address of 192.168.11.10 and needs access to manage R1. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-13.png",
-    "options": [
-      "extended ACL outbound on R2 WAN interface towards the internet",
-      "standard ACL inbound on R1 vty lines",
-      "extended ACLs inbound on R1 G0/0 and G0/1",
-      "extended ACL outbound on R2 S0/0/1"
-    ],
-    "answer": "standard ACL inbound on R1 vty lines",
-    "explanation": ""
-  },
-  {
-    "index": 24,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the any configuration option or command?",
-    "image": null,
-    "options": [
-      "to add a text entry for documentation purposes",
-      "to generate and send an informational message whenever the ACE is matched",
-      "to identify any IP address",
-      "to identify one specific IP address"
-    ],
-    "answer": "to identify any IP address",
-    "explanation": ""
-  },
-  {
-    "index": 25,
-    "title": "Which two keywords can be used in an access control list to replace a wildcard mask or address and wildcard mask pair? (Choose two.)",
-    "image": null,
-    "options": [
-      "host",
-      "most",
-      "gt",
-      "some",
-      "any",
-      "all"
-    ],
-    "answer": [
-      "host",
-      "any"
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 26,
-    "title": "Which statement describes a difference between the operation of inbound and outbound ACLs?",
-    "image": null,
-    "options": [
-      "Inbound ACLs are processed before the packets are routed while outbound ACLs are processed after the routing is completed.",
-      "In contrast to outbound ALCs, inbound ACLs can be used to filter packets with multiple criteria.",
-      "On a network interface, more than one inbound ACL can be configured but only one outbound ACL can be configured.",
-      "Inbound ACLs can be used in both routers and switches but outbound ACLs can be used only on routers."
-    ],
-    "answer": "Inbound ACLs are processed before the packets are routed while outbound ACLs are processed after the routing is completed.",
-    "explanation": ""
-  },
-  {
-    "index": 27,
-    "title": "What effect would the Router1(config-ext-nacl)# permit tcp 172.16.4.0 0.0.0.255 any eq www command have when implemented inbound on the f0/0 interface?",
-    "image": null,
-    "options": [
-      "All TCP traffic is permitted, and all other traffic is denied.",
-      "Traffic originating from 172.16.4.0/24 is permitted to all TCP port 80 destinations.",
-      "All traffic from 172.16.4.0/24 is permitted anywhere on any port.",
-      "The command is rejected by the router because it is incomplete."
-    ],
-    "answer": "Traffic originating from 172.16.4.0/24 is permitted to all TCP port 80 destinations.",
-    "explanation": ""
-  },
-  {
-    "index": 28,
-    "title": "Which ACE will permit a packet that originates from any network and is destined for a web server at 192.168.1.1?",
-    "image": null,
-    "options": [
-      "access-list 101 permit tcp any host 192.168.1.1 eq 80",
-      "access-list 101 permit tcp host 192.168.1.1 eq 80 any",
-      "access-list 101 permit tcp host 192.168.1.1 any eq 80",
-      "access-list 101 permit tcp any eq 80 host 192.168.1.1"
-    ],
-    "answer": "access-list 101 permit tcp any host 192.168.1.1 eq 80",
-    "explanation": ""
-  },
-  {
-    "index": 29,
-    "title": "Refer to the exhibit. A new network policy requires an ACL denying FTP and Telnet access to a Corp file server from all interns. The address of the file server is 172.16.1.15 and all interns are assigned addresses in the 172.18.200.0/24 network. After implementing the ACL, no one in the Corp network can access any of the servers. What is the problem?",
-    "image": "3~5/image-14.png",
-    "options": [
-      "Inbound ACLs must be routed before they are processed.",
-      "The ACL is implicitly denying access to all the servers.",
-      "Named ACLs require the use of port numbers.",
-      "The ACL is applied to the interface using the wrong direction."
-    ],
-    "answer": "The ACL is implicitly denying access to all the servers.",
-    "explanation": ""
-  },
-  {
-    "index": 30,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the access-class 20 in configuration option or command?",
-    "image": null,
-    "options": [
-      "to secure administrative access to the router",
-      "to remove an ACL from an interface",
-      "to remove a configured ACL",
-      "to apply a standard ACL to an interface"
-    ],
-    "answer": "to secure administrative access to the router",
-    "explanation": ""
-  },
-  {
-    "index": 31,
-    "title": "Refer to the exhibit. Internet privileges for an employee have been revoked because of abuse but the employee still needs access to company resources. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-15.png",
-    "options": [
-      "standard ACL inbound on R2 WAN interface connecting to the internet",
-      "standard ACL outbound on R2 WAN interface towards the internet",
-      "standard ACL inbound on R1 G0/0",
-      "standard ACL outbound on R1 G0/0"
-    ],
-    "answer": "standard ACL outbound on R2 WAN interface towards the internet",
-    "explanation": ""
-  },
-  {
-    "index": 32,
-    "title": "Refer to the exhibit. The student on the H1 computer continues to launch an extended ping with expanded packets at the student on the H2 computer. The school network administrator wants to stop this behavior, but still allow both students access to web-based computer assignments. What would be the best plan for the network administrator?",
-    "image": "3~5/image-16.png",
-    "options": [
-      "Apply an inbound standard ACL on R1 Gi0/0.",
-      "Apply an inbound extended ACL on R2 Gi0/1.",
-      "Apply an outbound extended ACL on R1 S0/0/1.",
-      "Apply an inbound extended ACL on R1 Gi0/0.",
-      "Apply an outbound standard ACL on R2 S0/0/1"
-    ],
-    "answer": "Apply an inbound extended ACL on R1 Gi0/0.",
-    "explanation": ""
-  },
-  {
-    "index": 33,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the ‘ip access-group 101 in’ configuration option or command?",
-    "image": null,
-    "options": [
-      "to apply an extended ACL to an interface",
-      "secure management traffic into the router",
-      "to secure administrative access to the router",
-      "to display all restricted traffic"
-    ],
-    "answer": "to apply an extended ACL to an interface",
-    "explanation": ""
-  },
-  {
-    "index": 34,
-    "title": "Refer to the exhibit. Network 192.168.30.0/24 contains all of the company servers. Policy dictates that traffic from the servers to both networks 192.168.10.0 and 192.168.11.0 be limited to replies for original requests. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-17.png",
-    "options": [
-      "extended ACL inbound on R3 G0/0",
-      "extended ACL inbound on R1 G0/0",
-      "standard ACL inbound on R1 G0/1",
-      "standard ACL inbound on R1 vty lines"
-    ],
-    "answer": "extended ACL inbound on R3 G0/0",
-    "explanation": ""
-  },
-  {
-    "index": 35,
-    "title": "What does the CLI prompt change to after entering the command ip access-list standard aaa from global configuration mode?",
-    "image": null,
-    "options": [
-      "Router(config-line)#",
-      "Router(config-std-nacl)#",
-      "Router(config)#",
-      "(config-router)#",
-      "Router(config-if)#"
-    ],
-    "answer": "Router(config-std-nacl)#",
-    "explanation": ""
-  },
-  {
-    "index": 36,
-    "title": "Refer to the exhibit. Many employees are wasting company time accessing social media on their work computers. The company wants to stop this access. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-18.png",
-    "options": [
-      "extended ACL outbound on R2 WAN interface towards the internet",
-      "standard ACL outbound on R2 WAN interface towards the internet",
-      "standard ACL outbound on R2 S0/0/0",
-      "extended ACLs inbound on R1 G0/0 and G0/1"
-    ],
-    "answer": "extended ACLs inbound on R1 G0/0 and G0/1",
-    "explanation": ""
-  },
-  {
-    "index": 37,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the 40 deny host 192.168.23.8 configuration option or command?",
-    "image": null,
-    "options": [
-      "to remove all ACLs from the router",
-      "to create an entry in a numbered ACL",
-      "to apply an ACL to all router interfaces",
-      "to secure administrative access to the router"
-    ],
-    "answer": "to create an entry in a numbered ACL",
-    "explanation": ""
-  },
-  {
-    "index": 38,
-    "title": "What wild card mask will match networks 172.16.0.0 through 172.19.0.0?",
-    "image": null,
-    "options": [
-      "0.0.3.255",
-      "0.252.255.255",
-      "0.3.255.255",
-      "0.0.255.255"
-    ],
-    "answer": "0.3.255.255",
-    "explanation": ""
-  },
-  {
-    "index": 39,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the no ip access-list 101 configuration option or command?",
-    "image": null,
-    "options": [
-      "to apply an ACL to all router interfaces",
-      "to secure administrative access to the router",
-      "to remove all ACLs from the router",
-      "to remove a configured ACL"
-    ],
-    "answer": "to remove a configured ACL",
-    "explanation": ""
-  },
-  {
-    "index": 40,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the ip access-group 101 in configuration option or command?",
-    "image": null,
-    "options": [
-      "to secure administrative access to the router",
-      "to apply an extended ACL to an interface",
-      "to display all restricted traffic",
-      "to secure management traffic into the router"
-    ],
-    "answer": "to apply an extended ACL to an interface",
-    "explanation": ""
-  },
-  {
-    "index": 41,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the remark configuration option or command?",
-    "image": null,
-    "options": [
-      "to generate and send an informational message whenever the ACE is matched",
-      "to add a text entry for documentation purposes",
-      "to identify one specific IP address",
-      "to restrict specific traffic access through an interface"
-    ],
-    "answer": "to add a text entry for documentation purposes",
-    "explanation": ""
-  },
-  {
-    "index": 42,
-    "title": "Refer to the exhibit. The company CEO demands that one ACL be created to permit email traffic to the internet and deny FTP access. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-19.png",
-    "options": [
-      "extended ACL outbound on R2 WAN interface towards the internet",
-      "standard ACL outbound on R2 S0/0/0",
-      "extended ACL inbound on R2 S0/0/0",
-      "standard ACL inbound on R2 WAN interface connecting to the internet"
-    ],
-    "answer": "extended ACL outbound on R2 WAN interface towards the internet",
-    "explanation": ""
-  },
-  {
-    "index": 43,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the established configuration option or command?",
-    "image": null,
-    "options": [
-      "to add a text entry for documentation purposes",
-      "to display all restricted traffic",
-      "to allow specified traffic through an interface",
-      "to allow returning reply traffic to enter the internal network"
-    ],
-    "answer": "to allow returning reply traffic to enter the internal network",
-    "explanation": ""
-  },
-  {
-    "index": 44,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the deny configuration option or command?",
-    "image": null,
-    "options": [
-      "to identify one specific IP address",
-      "to display all restricted traffic",
-      "to restrict specific traffic access through an interface",
-      "to generate and send an informational message whenever the ACE is matched"
-    ],
-    "answer": "to restrict specific traffic access through an interface",
-    "explanation": ""
-  },
-  {
-    "index": 45,
-    "title": "Refer to the exhibit. Only authorized remote users are allowed remote access to the company server 192.168.30.10. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-20.png",
-    "options": [
-      "extended ACLs inbound on R1 G0/0 and G0/1",
-      "extended ACL outbound on R2 WAN interface towards the internet",
-      "extended ACL inbound on R2 S0/0/0",
-      "extended ACL inbound on R2 WAN interface connected to the internet"
-    ],
-    "answer": "extended ACL inbound on R2 WAN interface connected to the internet",
-    "explanation": ""
-  },
-  {
-    "index": 46,
-    "title": "Refer to the exhibit. Employees on 192.168.11.0/24 work on critically sensitive information and are not allowed access off their network. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-21.png",
-    "options": [
-      "standard ACL inbound on R1 vty lines",
-      "extended ACL inbound on R1 G0/0",
-      "standard ACL inbound on R1 G0/1",
-      "extended ACL inbound on R3 S0/0/1"
-    ],
-    "answer": "standard ACL inbound on R1 G0/1",
-    "explanation": ""
-  },
-  {
-    "index": 47,
-    "title": "A technician is tasked with using ACLs to secure a router. When would the technician use the host configuration option or command?",
-    "image": null,
-    "options": [
-      "to add a text entry for documentation purposes",
-      "to generate and send an informational message whenever the ACE is matched",
-      "to identify any IP address",
-      "to identify one specific IP address"
-    ],
-    "answer": "to identify one specific IP address",
-    "explanation": ""
-  },
-  {
-    "index": 48,
-    "title": "Refer to the exhibit. The company has provided IP phones to employees on the 192.168.10.0/24 network and the voice traffic will need priority over data traffic. What is the best ACL type and placement to use in this situation?",
-    "image": "3~5/image-22.png",
-    "options": [
-      "extended ACL inbound on R1 G0/0",
-      "extended ACL outbound on R2 WAN interface towards the internet",
-      "extended ACL outbound on R2 S0/0/1",
-      "extended ACLs inbound on R1 G0/0 and G0/1"
-    ],
-    "answer": "extended ACL inbound on R1 G0/0",
-    "explanation": ""
-  },
-  {
-    "index": 49,
-    "title": "What is a function of OSPF hello packets?",
-    "image": null,
-    "options": [
-      "to send specifically requested link-state records",
-      "to discover neighbors and build adjacencies between them",
-      "to ensure database synchronization between routers",
-      "to request specific link-state records from neighbor routers"
-    ],
-    "answer": "to discover neighbors and build adjacencies between them",
-    "explanation": ""
-  },
-  {
-    "index": 50,
-    "title": "Which OSPF packet contains the different types of link-state advertisements?",
-    "image": null,
-    "options": [
-      "hello",
-      "DBD",
-      "LSR",
-      "LSU",
-      "LSAck"
-    ],
-    "answer": "LSU",
-    "explanation": ""
-  },
-  {
-    "index": 51,
-    "title": "Which three statements describe features of the OSPF topology table? (Choose three.)",
-    "image": null,
-    "options": [
-      "It is a link-state database that represents the network topology.",
-      "Its contents are the result of running the SPF algorithm.",
-      "When converged, all routers in an area have identical topology tables.",
-      "The topology table contains feasible successor routes.",
-      "The table can be viewed via the show ip ospf database command.",
-      "After convergence, the table only contains the lowest cost route entries for all known networks."
-    ],
-    "answer": [
-      "It is a link-state database that represents the network topology.",
-      "When converged, all routers in an area have identical topology tables.",
-      "The table can be viewed via the show ip ospf database command."
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 52,
-    "title": "What does an OSPF area contain?",
-    "image": null,
-    "options": [
-      "routers that share the same router ID",
-      "routers whose SPF trees are identical",
-      "routers that have the same link-state information in their LSDBs",
-      "routers that share the same process ID"
-    ],
-    "answer": "routers that have the same link-state information in their LSDBs",
-    "explanation": ""
-  },
-  {
-    "index": 53,
-    "title": "What is used to facilitate hierarchical routing in OSPF?",
-    "image": null,
-    "options": [
-      "the use of multiple areas",
-      "frequent SPF calculations",
-      "autosummarization",
-      "the election of designated routers"
-    ],
-    "answer": "the use of multiple areas",
-    "explanation": ""
-  },
-  {
-    "index": 54,
-    "title": "Which OSPF data structure is identical on all OSPF routers that share the same area?",
-    "image": null,
-    "options": [
-      "forwarding database",
-      "link-state database",
-      "adjacency database",
-      "routing table"
-    ],
-    "answer": "link-state database",
-    "explanation": ""
-  },
-  {
-    "index": 55,
-    "title": "WWhich step does an OSPF-enabled router take immediately after establishing an adjacency with another router?",
-    "image": null,
-    "options": [
-      "builds the topology table",
-      "link-state advertisements",
-      "chooses the best path",
-      "executes the SPF algorithm"
-    ],
-    "answer": "link-state advertisements",
-    "explanation": ""
-  },
-  {
-    "index": 56,
-    "title": "A network engineer has manually configured the hello interval to 15 seconds on an interface of a router that is running OSPFv2. By default, how will the dead interval on the interface be affected?",
-    "image": null,
-    "options": [
-      "The dead interval will not change from the default value.",
-      "The dead interval will now be 30 seconds.",
-      "The dead interval will now be 60 seconds.",
-      "The dead interval will now be 15 seconds."
-    ],
-    "answer": "The dead interval will now be 60 seconds.",
-    "explanation": ""
-  },
-  {
-    "index": 57,
-    "title": "Refer to the exhibit. A network administrator has configured the OSPF timers to the values that are shown in the graphic. What is the result of having those manually configured timers?",
-    "image": null,
-    "options": [
-      "R1 automatically adjusts its own timers to match the R2 timers.",
-      "The R1 dead timer expires between hello packets from R2.",
-      "The hello timer on R2 expires every ten seconds.",
-      "The neighbor adjacency has formed."
-    ],
-    "answer": "The R1 dead timer expires between hello packets from R2.",
-    "explanation": ""
-  },
-  {
-    "index": 58,
-    "title": "To establish a neighbor adjacency two OSPF routers will exchange hello packets. Which two values in the hello packets must match on both routers? (Choose two.)",
-    "image": null,
-    "options": [
-      "dead interval",
-      "router priority",
-      "list of neighbors",
-      "router ID",
-      "hello interval"
-    ],
-    "answer": [
-      "dead interval",
-      "hello interval"
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 59,
-    "title": "What is the default router priority value for all Cisco OSPF routers?",
-    "image": null,
-    "options": [
-      "0",
-      "1",
+      "244",
       "10",
+      "1",
       "255"
     ],
     "answer": "1",
     "explanation": ""
   },
   {
-    "index": 60,
-    "title": "Which type of OSPFv2 packet contains an abbreviated list of the LSDB of a sending router and is used by receiving routers to check against the local LSDB?",
+    "index": 7,
+    "title": "Refer to the exhibit. A network administrator has just configured address translation and is verifying the configuration. What three things can the administrator verify? (Choose three.)",
+    "image": "6~8/image-3.png",
+    "options": [
+      "A standard access list numbered 1 was used as part of the configuration process.",
+      "Three addresses from the NAT pool are being used by hosts.",
+      "Address translation is working.",
+      "One port on the router is not participating in the address translation.",
+      "The name of the NAT pool is refCount.",
+      "Two types of NAT are enabled."
+    ],
+    "answer": [
+      "A standard access list numbered 1 was used as part of the configuration process.",
+      "Address translation is working.",
+      "Two types of NAT are enabled."
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 8,
+    "title": "Refer to the exhibit. NAT is configured on RT1 and RT2. The PC is sending a request to the web server. What IPv4 address is the source IP address in the packet between RT2 and the web server?",
+    "image": "6~8/image-4.png",
+    "options": [
+      "192.168.1.5",
+      "203.0.113.10",
+      "172.16.1.254",
+      "172.16.1.10",
+      "209.165.200.245",
+      "192.0.2.2"
+    ],
+    "answer": "209.165.200.245",
+    "explanation": ""
+  },
+  {
+    "index": 9,
+    "title": "Refer to the exhibit. Based on the output that is shown, what type of NAT has been implemented?",
+    "image": "6~8/image-5.png",
+    "options": [
+      "dynamic NAT with a pool of two public IP addresses",
+      "PAT using an external interface",
+      "static NAT with a NAT pool",
+      "static NAT with one entry"
+    ],
+    "answer": "PAT using an external interface",
+    "explanation": ""
+  },
+  {
+    "index": 10,
+    "title": "Refer to the exhibit. From the perspective of users behind the NAT router, what type of NAT address is 209.165.201.1?",
+    "image": "6~8/image-6.png",
+    "options": [
+      "inside global",
+      "outside global",
+      "outside local",
+      "inside local"
+    ],
+    "answer": "inside global",
+    "explanation": ""
+  },
+  {
+    "index": 11,
+    "title": "Refer to the exhibit. Static NAT is being configured to allow PC 1 access to the web server on the internal network. What two addresses are needed in place of A and B to complete the static NAT configuration? (Choose two.)",
+    "image": "6~8/image-7.png",
+    "options": [
+      "A = 209.165.201.2",
+      "A = 10.1.0.13",
+      "B = 209.165.201.7",
+      "B = 10.0.254.5",
+      "B = 209.165.201.1"
+    ],
+    "answer": [
+      "A = 10.1.0.13",
+      "B = 209.165.201.1"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 12,
+    "title": "What is the purpose of the overload keyword in the ip nat inside source list 1 pool NAT_POOL overload command?",
     "image": null,
     "options": [
-      "database description",
-      "link-state update",
-      "link-state request",
-      "link-state acknowledgmen"
+      "It allows many inside hosts to share one or a few inside global addresses.",
+      "It allows a list of internal hosts to communicate with a specific group of external hosts.",
+      "It allows external hosts to initiate sessions with internal hosts.",
+      "It allows a pool of inside global addresses to be used by internal hosts."
     ],
-    "answer": "database description",
+    "answer": "It allows many inside hosts to share one or a few inside global addresses.",
+    "explanation": ""
+  },
+  {
+    "index": 13,
+    "title": "Refer to the exhibit. Which source address is being used by router R1 for packets being forwarded to the Internet?",
+    "image": "6~8/image-8.png",
+    "options": [
+      "10.6.15.2",
+      "209.165.202.141",
+      "198.51.100.3",
+      "209.165.200.225"
+    ],
+    "answer": "209.165.200.225",
+    "explanation": ""
+  },
+  {
+    "index": 14,
+    "title": "",
+    "image": "6~8/image-9.png",
+    "options": [
+      "Static NAT is working, but dynamic NAT is not.",
+      "Dynamic NAT is working, but static NAT is not.",
+      "Not enough information is given to determine if both static and dynamic NAT are working.",
+      "NAT is working."
+    ],
+    "answer": "Not enough information is given to determine if both static and dynamic NAT are working.",
+    "explanation": ""
+  },
+  {
+    "index": 15,
+    "title": "Which situation describes data transmissions over a WAN connection?",
+    "image": null,
+    "options": [
+      "A network administrator in the office remotely accesses a web server that is located in the data center at the edge of the campus.",
+      "A manager sends an email to all employees in the department with offices that are located in several buildings.",
+      "An employee prints a file through a networked printer that is located in another building.",
+      "An employee shares a database file with a co-worker who is located in a branch office on the other side of the city."
+    ],
+    "answer": "",
+    "explanation": ""
+  },
+  {
+    "index": 16,
+    "title": "Which two technologies are categorized as private WAN infrastructures? (Choose two.)",
+    "image": null,
+    "options": [
+      "Frame Relay",
+      "VPN",
+      "MetroE",
+      "DSL",
+      "cable"
+    ],
+    "answer": [
+      "Frame Relay",
+      "MetroE"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 17,
+    "title": "Which network scenario will require the use of a WAN?",
+    "image": null,
+    "options": [
+      "Employees need to connect to the corporate email server through a VPN while traveling.",
+      "Employees need to access web pages that are hosted on the corporate web servers in the DMZ within their building.",
+      "Employee workstations need to obtain dynamically assigned IP addresses.",
+      "Employees in the branch office need to share files with the headquarters office that is located in a separate building on the same campus network."
+    ],
+    "answer": "Employees need to connect to the corporate email server through a VPN while traveling.",
+    "explanation": ""
+  },
+  {
+    "index": 18,
+    "title": "What are two hashing algorithms used with IPsec AH to guarantee authenticity? (Choose two.)",
+    "image": null,
+    "options": [
+      "SHA",
+      "RSA",
+      "DH",
+      "MD5",
+      "AES"
+    ],
+    "answer": [
+      "SHA",
+      "MD5"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 19,
+    "title": "What two algorithms can be part of an IPsec policy to provide encryption and hashing to protect interesting traffic? (Choose two.)",
+    "image": null,
+    "options": [
+      "SHA",
+      "RSA",
+      "AES",
+      "DH",
+      "PSK"
+    ],
+    "answer": [
+      "SHA",
+      "AES"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 20,
+    "title": "Which VPN solution allows the use of a web browser to establish a secure, remote-access VPN tunnel to the ASA?",
+    "image": null,
+    "options": [
+      "client-based SSL",
+      "site-to-site using an ACL",
+      "clientless SSL",
+      "site-to-site using a preshared key"
+    ],
+    "answer": "clientless SSL",
+    "explanation": ""
+  },
+  {
+    "index": 21,
+    "title": "Which IPsec security function provides assurance that the data received via a VPN has not been modified in transit?",
+    "image": null,
+    "options": [
+      "integrity",
+      "authentication",
+      "confidentiality",
+      "secure key exchange"
+    ],
+    "answer": "integrity",
+    "explanation": ""
+  },
+  {
+    "index": 22,
+    "title": "Which two types of VPNs are examples of enterprise-managed remote access VPNs? (Choose two.)",
+    "image": null,
+    "options": [
+      "clientless SSL VPN",
+      "client-based IPsec VPN",
+      "IPsec VPN",
+      "IPsec Virtual Tunnel Interface VPN",
+      "GRE over IPsec VPN"
+    ],
+    "answer": [
+      "clientless SSL VPN",
+      "client-based IPsec VPN"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 23,
+    "title": "Which is a requirement of a site-to-site VPN?",
+    "image": null,
+    "options": [
+      "It requires hosts to use VPN client software to encapsulate traffic.",
+      "It requires the placement of a VPN server at the edge of the company network.",
+      "It requires a VPN gateway at each end of the tunnel to encrypt and decrypt traffic.",
+      "It requires a client/server architecture."
+    ],
+    "answer": "It requires a VPN gateway at each end of the tunnel to encrypt and decrypt traffic.",
+    "explanation": ""
+  },
+  {
+    "index": 24,
+    "title": "What is the function of the Diffie-Hellman algorithm within the IPsec framework?",
+    "image": null,
+    "options": [
+      "guarantees message integrity",
+      "allows peers to exchange shared keys",
+      "provides authentication",
+      "provides strong data encryption"
+    ],
+    "answer": "allows peers to exchange shared keys",
+    "explanation": ""
+  },
+  {
+    "index": 25,
+    "title": "What does NAT overloading use to track multiple internal hosts that use one inside global address?",
+    "image": null,
+    "options": [
+      "port numbers",
+      "IP addresses",
+      "autonomous system numbers",
+      "MAC addresses"
+    ],
+    "answer": "port numbers",
+    "explanation": ""
+  },
+  {
+    "index": 26,
+    "title": "Question as presented:",
+    "image": "6~8/image-10.png",
+    "options": [
+      "Y",
+      "N"
+    ],
+    "answer": "Y",
+    "explanation": ""
+  },
+  {
+    "index": 27,
+    "title": "Refer to the exhibit. R1 is configured for static NAT. What IP address will Internet hosts use to reach PC1?",
+    "image": "6~8/image-11.png",
+    "options": [
+      "192.168.0.1",
+      "192.168.0.10",
+      "209.165.201.1",
+      "209.165.200.225"
+    ],
+    "answer": "209.165.200.225",
+    "explanation": ""
+  },
+  {
+    "index": 28,
+    "title": "Which type of VPN uses the public key infrastructure and digital certificates?​",
+    "image": null,
+    "options": [
+      "SSL VPN",
+      "GRE over IPsec",
+      "IPsec virtual tunnel interface",
+      "dynamic multipoint VPN"
+    ],
+    "answer": "SSL VPN",
+    "explanation": ""
+  },
+  {
+    "index": 29,
+    "title": "Which two WAN infrastructure services are examples of private connections? (Choose two.)",
+    "image": null,
+    "options": [
+      "cable",
+      "DSL",
+      "Frame Relay",
+      "T1/E1",
+      "wireless"
+    ],
+    "answer": [
+      "Frame Relay",
+      "T1/E1"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 30,
+    "title": "Which two statements about the relationship between LANs and WANs are true? (Choose two.)",
+    "image": null,
+    "options": [
+      "Both LANs and WANs connect end devices.",
+      "WANs are typically operated through multiple ISPs, but LANs are typically operated by single organizations or individuals.",
+      "WANs must be publicly-owned, but LANs can be owned by either public or private entities.",
+      "WANs connect LANs at slower speed bandwidth than LANs connect their internal end devices.​",
+      "LANs connect multiple WANs together."
+    ],
+    "answer": [
+      "WANs are typically operated through multiple ISPs, but LANs are typically operated by single organizations or individuals.",
+      "WANs connect LANs at slower speed bandwidth than LANs connect their internal end devices.​"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 31,
+    "title": "Which statement describes an important characteristic of a site-to-site VPN?",
+    "image": null,
+    "options": [
+      "It must be statically set up.",
+      "It is ideally suited for use by mobile workers.",
+      "It requires using a VPN client on the host PC.",
+      "After the initial connection is established, it can dynamically change connection information.",
+      "It is commonly implemented over dialup and cable modem networks."
+    ],
+    "answer": "It must be statically set up.",
+    "explanation": ""
+  },
+  {
+    "index": 32,
+    "title": "How is “tunneling” accomplished in a VPN?",
+    "image": null,
+    "options": [
+      "New headers from one or more VPN protocols encapsulate the original packets.",
+      "All packets between two hosts are assigned to a single physical medium to ensure that the packets are kept private.",
+      "Packets are disguised to look like other types of traffic so that they will be ignored by potential attackers.",
+      "A dedicated circuit is established between the source and destination devices for the duration of the connection."
+    ],
+    "answer": "New headers from one or more VPN protocols encapsulate the original packets.",
+    "explanation": ""
+  },
+  {
+    "index": 33,
+    "title": "Which statement describes a VPN?",
+    "image": null,
+    "options": [
+      "VPNs use open source virtualization software to create the tunnel through the Internet.",
+      "VPNs use logical connections to create public networks through the Internet.",
+      "VPNs use dedicated physical connections to transfer data between remote users.",
+      "VPNs use virtual connections to create a private network through a public network.",
+      "network between two network devices."
+    ],
+    "answer": "VPNs use virtual connections to create a private network through a public network.",
+    "explanation": ""
+  },
+  {
+    "index": 34,
+    "title": "What problem is causing PC-A to be unable to communicate with the Internet?",
+    "image": "6~8/image-12.png",
+    "options": [
+      "The ip nat inside source command refers to the wrong interface.",
+      "The NAT interfaces are not correctly assigned.",
+      "The static route should not reference the interface, but the outside address instead.",
+      "The access list used in the NAT process is referencing the wrong subnet.",
+      "This router should be configured to use static NAT instead of PAT."
+    ],
+    "answer": "The NAT interfaces are not correctly assigned.",
+    "explanation": ""
+  },
+  {
+    "index": 35,
+    "title": "What type of address is 64.100.190.189?",
+    "image": null,
+    "options": [
+      "public",
+      "private"
+    ],
+    "answer": "public",
+    "explanation": ""
+  },
+  {
+    "index": 36,
+    "title": "Which type of VPN routes packets through virtual tunnel interfaces for encryption and forwarding?",
+    "image": "6~8/image-13.png",
+    "options": [
+      "MPLS VPN",
+      "IPsec virtual tunnel interface",
+      "dynamic multipoint VPN",
+      "GRE over IPsec",
+      "Y",
+      "N"
+    ],
+    "answer": [
+      "IPsec virtual tunnel interface",
+      "Y"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 37,
+    "title": "",
+    "image": "6~8/image-14.png",
+    "options": [
+      "Y",
+      "N"
+    ],
+    "answer": "Y",
+    "explanation": ""
+  },
+  {
+    "index": 38,
+    "title": "Refer to the exhibit. What has to be done in order to complete the static NAT configuration on R1?",
+    "image": "6~8/image-16.png",
+    "options": [
+      "Interface Fa0/0 should be configured with the command no ip nat inside.",
+      "Interface S0/0/0 should be configured with the command ip nat outside.",
+      "R1 should be configured with the command ip nat inside source static 209.165.200.200 192.168.11.11.",
+      "R1 should be configured with the command ip nat inside source static 209.165.200.1 192.168.11.11."
+    ],
+    "answer": "Interface S0/0/0 should be configured with the command ip nat outside.",
+    "explanation": ""
+  },
+  {
+    "index": 39,
+    "title": "In NAT terms, what address type refers to the globally routable IPv4 address of a destination host on the Internet?",
+    "image": null,
+    "options": [
+      "outside global",
+      "inside global",
+      "outside local",
+      "inside local"
+    ],
+    "answer": "outside global",
+    "explanation": ""
+  },
+  {
+    "index": 40,
+    "title": "Refer to the exhibit. Which two statements are correct based on the output as shown in the exhibit? (Choose two.)",
+    "image": "6~8/image-17.png",
+    "options": [
+      "The output is the result of the show ip nat translations command.",
+      "The host with the address 209.165.200.235 will respond to requests by using a source address of 192.168.10.10.",
+      "The output is the result of the show ip nat statistics command.",
+      "Traffic with the destination address of a public web server will be sourced from the IP of 192.168.1.10.",
+      "The host with the address 209.165.200.235 will respond to requests by using a source address of 209.165.200.235."
+    ],
+    "answer": [
+      "The output is the result of the show ip nat translations command.",
+      "The host with the address 209.165.200.235 will respond to requests by using a source address of 192.168.10.10."
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 41,
+    "title": "Which circumstance would result in an enterprise deciding to implement a corporate WAN?",
+    "image": null,
+    "options": [
+      "when the enterprise decides to secure its corporate LAN",
+      "when its employees become distributed across many branch locations",
+      "when the number of employees exceeds the capacity of the LAN",
+      "when the network will span multiple buildings"
+    ],
+    "answer": "when its employees become distributed across many branch locations",
+    "explanation": ""
+  },
+  {
+    "index": 42,
+    "title": "What is the function of the Hashed Message Authentication Code (HMAC) algorithm in setting up an IPsec VPN?",
+    "image": null,
+    "options": [
+      "protects IPsec keys during session negotiation",
+      "authenticates the IPsec peers",
+      "creates a secure channel for key negotiation",
+      "guarantees message integrity"
+    ],
+    "answer": "guarantees message integrity",
+    "explanation": ""
+  },
+  {
+    "index": 43,
+    "title": "What algorithm is used with IPsec to provide data confidentiality?",
+    "image": null,
+    "options": [
+      "Diffie-Hellman",
+      "SHA",
+      "MD5",
+      "RSA",
+      "AES"
+    ],
+    "answer": "AES",
+    "explanation": ""
+  },
+  {
+    "index": 44,
+    "title": "Which two technologies provide enterprise-managed VPN solutions? (Choose two.)",
+    "image": null,
+    "options": [
+      "remote access VPN",
+      "Frame Relay",
+      "Layer 2 MPLS VPN",
+      "site-to-site VPN",
+      "Layer 3 MPLS VPN"
+    ],
+    "answer": [
+      "remote access VPN",
+      "site-to-site VPN"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 45,
+    "title": "Question as presented:",
+    "image": "6~8/image-18.png",
+    "options": [
+      "Y",
+      "N"
+    ],
+    "answer": "Y",
+    "explanation": ""
+  },
+  {
+    "index": 46,
+    "title": "Refer to the exhibit. A network administrator is viewing the output from the command show ip nat translations. Which statement correctly describes the NAT translation that is occurring on router RT2?​",
+    "image": "6~8/image-19.png",
+    "options": [
+      "The traffic from a source IPv4 address of 192.168.254.253 is being translated to 192.0.2.88 by means of static NAT.",
+      "The traffic from a source IPv4 address of 192.0.2.88 is being translated by router RT2 to reach a destination IPv4 address of 192.168.254.253.",
+      "The traffic from a source IPv4 public address that originates traffic on the internet would be able to reach private internal IPv4 addresses​.",
+      "The traffic from a source IPv4 address of 192.168.2.20 is being translated by router RT2 to reach a destination IPv4 address of 192.0.2.254."
+    ],
+    "answer": "The traffic from a source IPv4 address of 192.168.254.253 is being translated to 192.0.2.88 by means of static NAT.",
+    "explanation": ""
+  },
+  {
+    "index": 47,
+    "title": "What type of address is 10.100.126.126?",
+    "image": null,
+    "options": [
+      "private",
+      "public"
+    ],
+    "answer": "private",
+    "explanation": ""
+  },
+  {
+    "index": 48,
+    "title": "Which type of VPN connects using the Transport Layer Security (TLS) feature?",
+    "image": null,
+    "options": [
+      "SSL VPN",
+      "MPLS VPN",
+      "IPsec virtual tunnel interface",
+      "dynamic multipoint VPN"
+    ],
+    "answer": "SSL VPN",
+    "explanation": ""
+  },
+  {
+    "index": 49,
+    "title": "Which two end points can be on the other side of an ASA site-to-site VPN configured using ASDM? (Choose two.)",
+    "image": null,
+    "options": [
+      "DSL switch",
+      "ISR router",
+      "another ASA",
+      "multilayer switch",
+      "Frame Relay switch"
+    ],
+    "answer": [
+      "ISR router",
+      "another ASA"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 50,
+    "title": "Which protocol creates a virtual point-to-point connection to tunnel unencrypted traffic between Cisco routers from a variety of protocols?",
+    "image": null,
+    "options": [
+      "IKE",
+      "IPsec",
+      "OSPF",
+      "GRE"
+    ],
+    "answer": "GRE",
+    "explanation": ""
+  },
+  {
+    "index": 51,
+    "title": "What is a disadvantage when both sides of a communication use PAT?",
+    "image": null,
+    "options": [
+      "End-to-end IPv4 traceability is lost.",
+      "The flexibility of connections to the Internet is reduced.",
+      "The security of the communication is negatively impacted.",
+      "Host IPv4 addressing is complicated."
+    ],
+    "answer": "End-to-end IPv4 traceability is lost.",
+    "explanation": ""
+  },
+  {
+    "index": 52,
+    "title": "What two addresses are specified in a static NAT configuration?",
+    "image": null,
+    "options": [
+      "the outside global and the outside local",
+      "the inside local and the outside global",
+      "the inside global and the outside local",
+      "the inside local and the inside global"
+    ],
+    "answer": "the inside local and the inside global",
+    "explanation": ""
+  },
+  {
+    "index": 53,
+    "title": "A company is considering updating the campus WAN connection. Which two WAN options are examples of the private WAN architecture? (Choose two.)",
+    "image": null,
+    "options": [
+      "municipal Wi-Fi",
+      "digital subscriber line",
+      "leased line",
+      "Ethernet WAN",
+      "cable"
+    ],
+    "answer": [
+      "leased line",
+      "Ethernet WAN"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 54,
+    "title": "What type of address is 128.107.240.239?",
+    "image": null,
+    "options": [
+      "Public",
+      "Private"
+    ],
+    "answer": "Public",
+    "explanation": ""
+  },
+  {
+    "index": 55,
+    "title": "Which type of VPN has both Layer 2 and Layer 3 implementations?",
+    "image": null,
+    "options": [
+      "IPsec virtual tunnel interface",
+      "dynamic multipoint VPN",
+      "GRE over IPsec",
+      "MPLS VPN"
+    ],
+    "answer": "MPLS VPN",
+    "explanation": ""
+  },
+  {
+    "index": 56,
+    "title": "Refer to the exhibit. A network administrator has configured R2 for PAT. Why is the configuration incorrect?",
+    "image": "6~8/image-20.png",
+    "options": [
+      "NAT-POOL2 is bound to the wrong ACL",
+      "The ACL does not define the list of addresses to be translated.",
+      "The overload keyword should not have been applied.",
+      "The static NAT entry is missing"
+    ],
+    "answer": "NAT-POOL2 is bound to the wrong ACL",
+    "explanation": ""
+  },
+  {
+    "index": 57,
+    "title": "Match each component of a WAN connection to its description. (Not all options are used.)",
+    "image": "6~8/image-21.png",
+    "options": [
+      "Y",
+      "N"
+    ],
+    "answer": "Y",
+    "explanation": ""
+  },
+  {
+    "index": 58,
+    "title": "Which type of VPN allows multicast and broadcast traffic over a secure site-to-site VPN?",
+    "image": null,
+    "options": [
+      "dynamic multipoint VPN",
+      "SSL VPN",
+      "IPsec virtual tunnel interface",
+      "GRE over IPsec"
+    ],
+    "answer": "GRE over IPsec",
+    "explanation": ""
+  },
+  {
+    "index": 59,
+    "title": "Match the steps with the actions that are involved when an internal host with IP address 192.168.10.10 attempts to send a packet to and external server at the IP address 209.165.200.254 across a router R1 that running dynamic NAT. (Not all options are used.)",
+    "image": "6~8/image-22.png",
+    "options": [
+      "Y",
+      "N"
+    ],
+    "answer": "Y",
+    "explanation": ""
+  },
+  {
+    "index": 60,
+    "title": "Which type of VPN involves passenger, carrier, and transport protocols?",
+    "image": null,
+    "options": [
+      "GRE over IPsec",
+      "dynamic multipoint VPN",
+      "MPLS VPN",
+      "IPsec virtual tunnel interface"
+    ],
+    "answer": "GRE over IPsec",
     "explanation": ""
   },
   {
     "index": 61,
-    "title": "In an OSPF network when are DR and BDR elections required?",
-    "image": null,
+    "title": "Match the steps with the actions that are involved when an internal host with IP address 192.168.10.10 attempts to send a packet to an external server at the IP address 209.165.200.254 across a router R1 that is running dynamic NAT. (Not all options are used.)",
+    "image": "6~8/image-23.png",
     "options": [
-      "when the two adjacent neighbors are interconnected over a point-to-point link",
-      "when all the routers in an OSPF area cannot form adjacencies",
-      "when the routers are interconnected over a common Ethernet network",
-      "when the two adjacent neighbors are in two different networks"
+      "Y",
+      "N"
     ],
-    "answer": "when the routers are interconnected over a common Ethernet network",
+    "answer": "Y",
     "explanation": ""
   },
   {
     "index": 62,
-    "title": "When an OSPF network is converged and no network topology change has been detected by a router, how often will LSU packets be sent to neighboring routers?",
-    "image": null,
+    "title": "Refer to the exhibit. A network administrator is viewing the output from the command show ip nat translations . Which statement correctly describes the NAT translation that is occurring on router RT2?​",
+    "image": "6~8/image-24.png",
     "options": [
-      "every 5 minutes",
-      "every 10 minutes",
-      "every 30 minutes",
-      "every 60 minutes"
+      "The traffic from a source IPv4 public address that originates traffic on the internet would be able to reach private internal IPv4 addresses​.",
+      "The traffic from a source IPv4 address of 192.168.2.20 is being translated by router RT2 to reach a destination IPv4 address of 192.0.2.254.",
+      "The traffic from a source IPv4 address of 192.168.254.253 is being translated to 192.0.2.88 by means of static NAT.",
+      "The traffic from a source IPv4 address of 192.0.2.88 is being translated by router RT2 to reach a destination IPv4 address of 192.168.254.253."
     ],
-    "answer": "every 30 minutes",
+    "answer": "The traffic from a source IPv4 address of 192.168.254.253 is being translated to 192.0.2.88 by means of static NAT.",
     "explanation": ""
   },
   {
     "index": 63,
-    "title": "What will an OSPF router prefer to use first as a router ID?",
+    "title": "What type of address is 10.131.48.7?",
     "image": null,
     "options": [
-      "a loopback interface that is configured with the highest IP address on the router",
-      "any IP address that is configured using the router-id command",
-      "the highest active interface IP that is configured on the router",
-      "the highest active interface that participates in the routing process because of a specifically configured network statement"
+      "Private",
+      "Public"
     ],
-    "answer": "any IP address that is configured using the router-id command",
+    "answer": "Private",
     "explanation": ""
   },
   {
     "index": 64,
-    "title": "What are the two purposes of an OSPF router ID? (Choose two.)",
+    "title": "Which type of VPN supports multiple sites by applying configurations to virtual interfaces instead of physical interfaces?",
     "image": null,
     "options": [
-      "to uniquely identify the router within the OSPF domain",
-      "to facilitate router participation in the election of the designated router",
-      "to enable the SPF algorithm to determine the lowest cost path to remote networks",
-      "to facilitate the establishment of network convergence",
-      "to facilitate the transition of the OSPF neighbor state to Full"
+      "dynamic multipoint VPN",
+      "IPsec virtual tunnel interface",
+      "MPLS VPN",
+      "GRE over IPsec"
     ],
-    "answer": [
-      "to uniquely identify the router within the OSPF domain",
-      "to facilitate router participation in the election of the designated router"
-    ],
+    "answer": "IPsec virtual tunnel interface",
     "explanation": ""
   },
   {
     "index": 65,
-    "title": "Refer to the exhibit. If no router ID was manually configured, what would router Branch1 use as its OSPF router ID?",
-    "image": "3~5/image-23.png",
+    "title": "Which type of VPN involves a nonsecure tunneling protocol being encapsulated by IPsec?",
+    "image": null,
     "options": [
-      "10.0.0.1",
-      "10.1.0.1",
-      "192.168.1.100",
-      "209.165.201.1"
+      "dynamic multipoint VPN",
+      "SSL VPN",
+      "IPsec virtual tunnel interface",
+      "GRE over IPsec"
     ],
-    "answer": "192.168.1.100",
+    "answer": "GRE over IPsec",
     "explanation": ""
   },
   {
     "index": 66,
-    "title": "A network technician issues the following commands when configuring a router: \\n R1(config)# router ospf 11 \\n R1(config-router)# network 10.10.10.0 0.0.0.255 area 0 \\n What does the number 11 represent?",
+    "title": "What type of address is 10.19.6.7?",
     "image": null,
     "options": [
-      "the OSPF process ID on R1",
-      "the cost of the link to R1",
-      "the autonomous system number to which R1 belongs",
-      "the administrative distance that is manually assigned to R1",
-      "the area number where R1 is located"
+      "private",
+      "public"
     ],
-    "answer": "the OSPF process ID on R1",
+    "answer": "private",
     "explanation": ""
   },
   {
     "index": 67,
-    "title": "An OSPF router has three directly connected networks; 172.16.0.0/16, 172.16.1.0/16, and 172.16.2.0/16. Which OSPF network command would advertise only the 172.16.1.0 network to neighbors?",
-    "image": null,
-    "options": [
-      "router(config-router)# network 172.16.1.0 0.0.255.255 area 0",
-      "router(config-router)# network 172.16.0.0 0.0.15.255 area 0",
-      "router(config-router)# network 172.16.1.0 255.255.255.0 area 0",
-      "router(config-router)# network 172.16.1.0 0.0.0.0 area 0"
-    ],
-    "answer": "router(config-router)# network 172.16.1.0 255.255.255.0 area 0",
-    "explanation": ""
-  },
-  {
-    "index": 68,
-    "title": "Refer to the exhibit. Which three statements describe the results of the OSPF election process of the topology that is shown in the exhibit? (Choose three.)",
-    "image": "3~5/_image.png",
-    "options": [
-      "R3 will be elected BDR.",
-      "The R4 FastEthernet 0/0 priority is 128.",
-      "The R4 router ID is 172.16.1.1.",
-      "R1 will be elected BDR.",
-      "The router ID on R2 is the loopback interface.",
-      "R2 will be elected DR."
-    ],
-    "answer": [
-      "R3 will be elected BDR.",
-      "The R4 router ID is 172.16.1.1.",
-      "R2 will be elected DR."
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 69,
-    "title": "Refer to the exhibit. If the switch reboots and all routers have to re-establish OSPF adjacencies, which routers will become the new DR and BDR?",
-    "image": "3~5/_image-1.png",
-    "options": [
-      "Router R4 will become the DR and router R1 will become the BDR.",
-      "Router R2 will become the DR and router R3 will become the BDR.",
-      "Router R1 will become the DR and router R2 will become the BDR.",
-      "Router R4 will become the DR and router R3 will become the BDR."
-    ],
-    "answer": "Router R4 will become the DR and router R1 will become the BDR.",
-    "explanation": ""
-  },
-  {
-    "index": 70,
-    "title": "By default, what is the OSPF cost for any link with a bandwidth of 100 Mb/s or greater?",
-    "image": null,
-    "options": [
-      "100000000",
-      "10000",
-      "1",
-      "100"
-    ],
-    "answer": "1",
-    "explanation": ""
-  },
-  {
-    "index": 71,
-    "title": "Refer to the exhibit. What is the OSPF cost to reach the router A LAN 172.16.1.0/24 from B?",
-    "image": "3~5/_image-2.png",
-    "options": [
-      "782",
-      "74",
-      "128",
-      "65"
-    ],
-    "answer": "65",
-    "explanation": ""
-  },
-  {
-    "index": 72,
-    "title": "Refer to the exhibit. On which router or routers would a default route be statically configured in a corporate environment that uses single area OSPF as the routing protocol?",
-    "image": "3~5/_image-3.png",
-    "options": [
-      "R0-A",
-      "ISP, R0-A, R0-B, and R0-C",
-      "ISP",
-      "R0-B and R0-C",
-      "ISP and R0-A",
-      "R0-A, R0-B, and R0-C"
-    ],
-    "answer": "R0-A",
-    "explanation": ""
-  },
-  {
-    "index": 73,
-    "title": "What command would be used to determine if a routing protocol-initiated relationship had been made with an adjacent router?",
-    "image": null,
-    "options": [
-      "ping",
-      "show ip ospf neighbor",
-      "show ip interface brief",
-      "show ip protocols"
-    ],
-    "answer": "show ip ospf neighbor",
-    "explanation": ""
-  },
-  {
-    "index": 74,
-    "title": "Refer to the exhibit. Which command did an administrator issue to produce this output?",
-    "image": "3~5/_image-4.png",
-    "options": [
-      "R1# show ip ospf interface serial0/0/1",
-      "R1# show ip route ospf",
-      "R1# show ip ospf",
-      "R1# show ip ospf neighbo"
-    ],
-    "answer": "R1# show ip ospf interface serial0/0/1",
-    "explanation": ""
-  },
-  {
-    "index": 75,
-    "title": "Which command is used to verify that OSPF is enabled and also provides a list of the networks that are being advertised by the network?​",
-    "image": null,
-    "options": [
-      "how ip interface brief",
-      "show ip ospf interface",
-      "show ip protocols",
-      "show ip route ospf"
-    ],
-    "answer": "show ip protocols",
-    "explanation": ""
-  },
-  {
-    "index": 76,
-    "title": "Refer to the exhibit. A network administrator has configured OSPFv2 on the two Cisco routers but PC1 is unable to connect to PC2. What is the most likely problem?",
-    "image": "3~5/_image-5.png",
-    "options": [
-      "Interface Fa0/0 has not been activated for OSPFv2 on router R2.",
-      "Interface Fa0/0 is configured as a passive-interface on router R2.",
-      "Interface S0/0 is configured as a passive-interface on router R2.",
-      "Interface s0/0 has not been activated for OSPFv2 on router R2."
-    ],
-    "answer": "Interface Fa0/0 has not been activated for OSPFv2 on router R2.",
-    "explanation": ""
-  },
-  {
-    "index": 77,
-    "title": "What is the recommended Cisco best practice for configuring an OSPF-enabled router so that each router can be easily identified when troubleshooting routing issues?",
-    "image": null,
-    "options": [
-      "Configure a value using the router-id command.",
-      "Use the highest active interface IP address that is configured on the router.",
-      "Use a loopback interface configured with the highest IP address on the router.",
-      "Use the highest IP address assigned to an active interface participating in the routing process."
-    ],
-    "answer": "Configure a value using the router-id command.",
-    "explanation": ""
-  },
-  {
-    "index": 78,
-    "title": "Which step in the link-state routing process is described by a router running an algorithm to determine the best path to each destination?",
-    "image": null,
-    "options": [
-      "load balancing equal-cost paths",
-      "declaring a neighbor to be inaccessible",
-      "choosing the best route",
-      "executing the SPF algorithm"
-    ],
-    "answer": "executing the SPF algorithm",
-    "explanation": ""
-  },
-  {
-    "index": 79,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 192.168.223.0 255.255.254.0. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      "0.0.1.255",
-      "0.0.7.255",
-      "0.0.15.255",
-      "0.0.31.255"
-    ],
-    "answer": "0.0.1.255",
-    "explanation": ""
-  },
-  {
-    "index": 80,
-    "title": "What is the format of the router ID on an OSPF-enabled router?",
-    "image": null,
-    "options": [
-      "a unique router host name that is configured on the router",
-      "a unique phrase with no more than 16 characters",
-      "a 32-bit number formatted like an IPv4 address",
-      "an 8-bit number with a decimal value between 0 and 255",
-      "a character string with no space"
-    ],
-    "answer": "a 32-bit number formatted like an IPv4 address",
-    "explanation": ""
-  },
-  {
-    "index": 81,
-    "title": "After modifying the router ID on an OSPF router, what is the preferred method to make the new router ID effective?",
-    "image": null,
-    "options": [
-      "HQ# copy running-config startup-config",
-      "HQ# resume",
-      "HQ# clear ip route *",
-      "HQ# clear ip ospf process"
-    ],
-    "answer": "HQ# clear ip ospf process",
-    "explanation": ""
-  },
-  {
-    "index": 82,
-    "title": "In an OSPFv2 configuration, what is the effect of entering the command network 192.168.1.1 0.0.0.0 area 0 ?",
-    "image": null,
-    "options": [
-      "It allows all 192.168.1.0 networks to be advertised.",
-      "It tells the router which interface to turn on for the OSPF routing process.",
-      "It changes the router ID of the router to 192.168.1.1.",
-      "It enables OSPF on all interfaces on the router."
-    ],
-    "answer": "It tells the router which interface to turn on for the OSPF routing process.",
-    "explanation": ""
-  },
-  {
-    "index": 83,
-    "title": "What is the reason for a network engineer to alter the default reference bandwidth parameter when configuring OSPF?",
-    "image": null,
-    "options": [
-      "to force that specific link to be used in the destination route",
-      "to more accurately reflect the cost of links greater than 100 Mb/s",
-      "to enable the link for OSPF routing",
-      "to increase the speed of the link"
-    ],
-    "answer": "to more accurately reflect the cost of links greater than 100 Mb/s",
-    "explanation": ""
-  },
-  {
-    "index": 84,
-    "title": "Open the PT Activity. Perform the tasks in the activity instructions and then answer the question. Which task has to be performed on Router 1 for it to establish an OSPF adjacency with Router 2?",
-    "image": "3~5/_image-6.png",
-    "options": [
-      "Issue the clear ip ospf process command.",
-      "Change the subnet mask of interface FastEthernet 0/0 to 255.255.255.0.",
-      "Remove the passive interface command from interface FastEthernet 0/0.",
-      "Add the network 10.0.1.0 0.0.0.255 area 0 command to the OSPF process."
-    ],
-    "answer": "Change the subnet mask of interface FastEthernet 0/0 to 255.255.255.0.",
-    "explanation": ""
-  },
-  {
-    "index": 85,
-    "title": "Match the description to the term. (Not all options are used.)",
-    "image": "3~5/_image-7.png",
-    "options": [
-      "o",
-      "x",
-      "x",
-      "x"
-    ],
-    "answer": "o",
-    "explanation": ""
-  },
-  {
-    "index": 86,
-    "title": "What is a benefit of multiarea OSPF routing?",
-    "image": null,
-    "options": [
-      "Topology changes in one area do not cause SPF recalculations in other areas.",
-      "Routers in all areas share the same link-state database and have a complete picture of the entire network.",
-      "A backbone area is not required.",
-      "Automatic route summarization occurs by default between areas."
-    ],
-    "answer": "Topology changes in one area do not cause SPF recalculations in other areas.",
-    "explanation": ""
-  },
-  {
-    "index": 87,
-    "title": "Match the OSPF state with the order in which it occurs. (Not all options are used.)",
-    "image": "3~5/_image-8.png",
-    "options": [
-      "o",
-      "x",
-      "x",
-      "x"
-    ],
-    "answer": "o",
-    "explanation": ""
-  },
-  {
-    "index": 88,
-    "title": "What indicates to a link-state router that a neighbor is unreachable?",
-    "image": null,
-    "options": [
-      "if the router no longer receives hello packets",
-      "if the router receives an update with a hop count of 16",
-      "if the router receives an LSP with previously learned information",
-      "if the router no longer receives routing updates"
-    ],
-    "answer": "if the router no longer receives hello packets",
-    "explanation": ""
-  },
-  {
-    "index": 89,
-    "title": "Which three OSPF states are involved when two routers are forming an adjacency? (Choose three.)",
-    "image": null,
-    "options": [
-      "Exchange",
-      "Init",
-      "ExStart",
-      "Two-way",
-      "Loading",
-      "Down"
-    ],
-    "answer": [
-      "Init",
-      "Two-way",
-      "Down"
-    ],
-    "explanation": ""
-  },
-  {
-    "index": 90,
-    "title": "Refer to the exhibit. Suppose that routers B, C, and D have a default priority, and router A has a priority 0. Which conclusion can be drawn from the DR/BDR election process?​",
-    "image": "3~5/_image-9.png",
-    "options": [
-      "If the priority of router C is changed to 255, then it will become the DR.",
-      "Router A will become the DR and router D will become the BDR.​",
-      "If the DR fails, the new DR will be router B.",
-      "If a new router with a higher priority is added to this network, it will become the DR."
-    ],
-    "answer": "If the DR fails, the new DR will be router B.",
-    "explanation": ""
-  },
-  {
-    "index": 91,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 64.102.0.0 255.255.255.128. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      "0.0.31.255",
-      "0.0.0.63",
-      "0.0.63.255",
-      "0.0.0.127"
-    ],
-    "answer": "0.0.0.127",
-    "explanation": ""
-  },
-  {
-    "index": 92,
-    "title": "Which command will a network engineer issue to verify the configured hello and dead timer intervals on a point-to-point WAN link between two routers that are running OSPFv2?",
-    "image": null,
-    "options": [
-      "show ipv6 ospf interface serial 0/0/0",
-      "show ip ospf neighbor",
-      "show ip ospf interface fastethernet 0/1",
-      "show ip ospf interface serial 0/0/0"
-    ],
-    "answer": "show ip ospf interface serial 0/0/0",
-    "explanation": ""
-  },
-  {
-    "index": 93,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 128.107.0.0 255.255.255.192. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      "0.0.63.255",
-      "0.0.0.63",
-      "0.0.0.3",
-      "0.0.0.7"
-    ],
-    "answer": "0.0.0.63",
-    "explanation": ""
-  },
-  {
-    "index": 94,
-    "title": "Match each OSPF packet type to how it is used by a router. (Not all options are used.)",
-    "image": "3~5/_image-10.png",
-    "options": [
-      "o",
-      "x",
-      "x",
-      "x"
-    ],
-    "answer": "o",
-    "explanation": ""
-  },
-  {
-    "index": 95,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 192.168.181.0 255.255.254.0. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      ".0.63.255",
-      "0.0.15.255",
-      "0.0.1.255",
-      "0.0.31.255"
-    ],
-    "answer": "0.0.1.255",
-    "explanation": ""
-  },
-  {
-    "index": 96,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 198.19.0.0 255.255.252.0. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      "0.0.63.255",
-      "0.0.3.255",
-      "0.0.31.255",
-      "0.0.0.255"
-    ],
-    "answer": "0.0.3.255",
-    "explanation": ""
-  },
-  {
-    "index": 97,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 128.107.0.0 255.255.252.0. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      "0.0.3.255",
-      "0.0.0.7",
-      "0.0.0.3",
-      "0.0.63.255"
-    ],
-    "answer": "0.0.3.255",
-    "explanation": ""
-  },
-  {
-    "index": 98,
-    "title": "Which step in the link-state routing process is described by a router flooding link-state and cost information about each directly connected link?",
-    "image": null,
-    "options": [
-      "building the topology table",
-      "selecting the router ID",
-      "exchanging link-state advertisements",
-      "injecting the default route"
-    ],
-    "answer": "exchanging link-state advertisements",
-    "explanation": ""
-  },
-  {
-    "index": 99,
-    "title": "Which step in the link-state routing process is described by a router sending Hello packets out all of the OSPF-enabled interfaces?",
-    "image": null,
-    "options": [
-      "electing the designated router",
-      "establishing neighbor adjacencies",
-      "injecting the default route",
-      "exchanging link-state advertisements"
-    ],
-    "answer": "establishing neighbor adjacencies",
-    "explanation": ""
-  },
-  {
-    "index": 100,
-    "title": "An administrator is configuring single-area OSPF on a router. One of the networks that must be advertised is 64.100.0.0 255.255.255.0. What wildcard mask would the administrator use in the OSPF network statement?",
-    "image": null,
-    "options": [
-      "0.0.0.31",
-      "0.0.0.255",
-      "0.0.0.63",
-      "0.0.0.127"
-    ],
-    "answer": "0.0.0.255",
-    "explanation": ""
-  },
-  {
-    "index": 101,
-    "title": "Which step in the link-state routing process is described by a router inserting best paths into the routing table?",
-    "image": null,
-    "options": [
-      "declaring a neighbor to be inaccessible",
-      "executing the SPF algorithm",
-      "load balancing equal-cost paths",
-      "choosing the best route"
-    ],
-    "answer": "choosing the best route",
-    "explanation": ""
-  },
-  {
-    "index": 102,
     "title": "What type of address is 64.101.198.197?",
     "image": null,
     "options": [
@@ -1400,29 +918,75 @@
     "explanation": ""
   },
   {
-    "index": 103,
-    "title": "An OSPF router has three directly connected networks; 172.16.0.0/24, 172.16.1.0/24, and 172.16.2.0/24. Which OSPF network command would advertise only the 172.16.1.0 network to neighbors?",
+    "index": 68,
+    "title": "What type of address is 64.101.198.107",
     "image": null,
     "options": [
-      "router(config-router)# network 172.16.1.0 0.0.255.255 area 0",
-      "router(config-router)# network 172.16.0.0 0.0.15.255 area 0",
-      "router(config-router)# network 172.16.1.0 0.0.0.255 area 0",
-      "router(config-router)# network 172.16.1.0 0.0.0.0 area 0"
+      "public",
+      "private"
     ],
-    "answer": "router(config-router)# network 172.16.1.0 0.0.0.255 area 0",
+    "answer": "public",
     "explanation": ""
   },
   {
-    "index": 104,
-    "title": "Which step in the link-state routing process is described by a router building a link-state database based on received LSAs?",
+    "index": 69,
+    "title": "What type of address is 10.100.34.34?",
     "image": null,
     "options": [
-      "selecting the router ID",
-      "declaring a neighbor to be inaccessible",
-      "executing the SPF algorithm",
-      "building the topology table"
+      "private",
+      "public"
     ],
-    "answer": "building the topology table",
+    "answer": "private",
+    "explanation": ""
+  },
+  {
+    "index": 70,
+    "title": "What type of address is 192.168.7.126?",
+    "image": null,
+    "options": [
+      "Private.",
+      "Public"
+    ],
+    "answer": "Private.",
+    "explanation": ""
+  },
+  {
+    "index": 71,
+    "title": "What type of address is 198.133.219.148?",
+    "image": null,
+    "options": [
+      "Private.",
+      "Public"
+    ],
+    "answer": "Public",
+    "explanation": ""
+  },
+  {
+    "index": 72,
+    "title": "Which two end points can be on the other side of an ASA site-to-site VPN? (Choose two.)",
+    "image": null,
+    "options": [
+      "DSL switch",
+      "router",
+      "another ASA",
+      "multilayer switch",
+      "Frame Relay switch"
+    ],
+    "answer": [
+      "router",
+      "another ASA"
+    ],
+    "explanation": ""
+  },
+  {
+    "index": 73,
+    "title": "What type of address is 192.168.7.98?",
+    "image": null,
+    "options": [
+      "public",
+      "private"
+    ],
+    "answer": "private",
     "explanation": ""
   }
 ]
