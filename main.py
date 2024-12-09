@@ -30,6 +30,14 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 with open("questions.json", "r", encoding="utf-8") as file:
     questions_data = json.load(file)
 
+# 요청 로깅 미들웨어
+@app.middleware("http")
+async def log_requests(request: Request, call_next):
+    print(f"요청: {request.method} {request.url}")
+    response = await call_next(request)
+    print(f"응답 상태 코드: {response.status_code}")
+    return response
+
 # 요청 바디 모델 정의
 class AnswerRequest(BaseModel):
     answer: List[str]
@@ -37,17 +45,19 @@ class AnswerRequest(BaseModel):
 # 모든 문제를 제공하는 API 엔드포인트
 @app.get("/get-questions")
 async def get_questions():
-    randomized_questions = random.sample(questions_data, len(questions_data))
+    randomized_questions = random.sample(questions_data, len(questions_data))  # 문항 섞기
     questions_for_frontend = [
         {
             "index": question["index"],
             "title": question["title"],
-            "options": question["options"],
+            "options": random.sample(question["options"], len(question["options"])),  # 옵션 순서 섞기
             "image": question.get("image")
         }
         for question in randomized_questions
     ]
     return questions_for_frontend
+
+
 
 # 사용자가 제출한 답변을 확인하는 API 엔드포인트
 @app.post("/check-answer/{question_index}")
@@ -122,4 +132,6 @@ async def root():
     return FileResponse("static/index.html")
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8111)
+    uvicorn.run(app, host="0.0.0.0", port=8111, log_level="debug")
+
+

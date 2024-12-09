@@ -55,10 +55,13 @@
 
         // 페이지 로딩 시 모든 문제 불러오기
         async function loadQuestions() {
-            const response = await fetch("http://122.45.4.113:8111/get-questions");
+            const response = await fetch("/get-questions");
+            if (!response.ok) {
+                alert("문제를 불러오는 데 실패했습니다.");
+                return;
+            }
             questionList = await response.json();
-            questionList = shuffleArray(questionList); // 문제 순서를 섞음
-
+            questionList = shuffleArray(questionList);
             document.getElementById("total-questions").innerText = questionList.length;
             loadNextQuestion();
         }

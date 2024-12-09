@@ -192,7 +192,7 @@
   },
   {
     "index": 14,
-    "title": "",
+    "title": "Refer to the exhibit. The NAT configuration applied to the router is as follows:",
     "image": "6~8/image-9.png",
     "options": [
       "Static NAT is working, but dynamic NAT is not.",
@@ -213,7 +213,7 @@
       "An employee prints a file through a networked printer that is located in another building.",
       "An employee shares a database file with a co-worker who is located in a branch office on the other side of the city."
     ],
-    "answer": "",
+    "answer": "An employee shares a database file with a co-worker who is located in a branch office on the other side of the city.",
     "explanation": ""
   },
   {
@@ -502,23 +502,29 @@
   {
     "index": 36,
     "title": "Which type of VPN routes packets through virtual tunnel interfaces for encryption and forwarding?",
-    "image": "6~8/image-13.png",
+    "image": null,
     "options": [
       "MPLS VPN",
       "IPsec virtual tunnel interface",
       "dynamic multipoint VPN",
-      "GRE over IPsec",
-      "Y",
-      "N"
+      "GRE over IPsec"
     ],
-    "answer": [
-      "IPsec virtual tunnel interface",
-      "Y"
-    ],
+    "answer": "IPsec virtual tunnel interface",
     "explanation": ""
   },
   {
     "index": 37,
+    "title": "Match the scenario to the WAN solution. (Not all options are used.)",
+    "image": "6~8/image-13.png",
+    "options": [
+      "Y",
+      "N"
+    ],
+    "answer": "Y",
+    "explanation": ""
+  },
+  {
+    "index": 38,
     "title": "",
     "image": "6~8/image-14.png",
     "options": [
@@ -529,7 +535,7 @@
     "explanation": ""
   },
   {
-    "index": 38,
+    "index": 39,
     "title": "Refer to the exhibit. What has to be done in order to complete the static NAT configuration on R1?",
     "image": "6~8/image-16.png",
     "options": [
@@ -542,7 +548,7 @@
     "explanation": ""
   },
   {
-    "index": 39,
+    "index": 40,
     "title": "In NAT terms, what address type refers to the globally routable IPv4 address of a destination host on the Internet?",
     "image": null,
     "options": [
@@ -555,7 +561,7 @@
     "explanation": ""
   },
   {
-    "index": 40,
+    "index": 41,
     "title": "Refer to the exhibit. Which two statements are correct based on the output as shown in the exhibit? (Choose two.)",
     "image": "6~8/image-17.png",
     "options": [
@@ -572,7 +578,7 @@
     "explanation": ""
   },
   {
-    "index": 41,
+    "index": 42,
     "title": "Which circumstance would result in an enterprise deciding to implement a corporate WAN?",
     "image": null,
     "options": [
@@ -585,7 +591,7 @@
     "explanation": ""
   },
   {
-    "index": 42,
+    "index": 43,
     "title": "What is the function of the Hashed Message Authentication Code (HMAC) algorithm in setting up an IPsec VPN?",
     "image": null,
     "options": [
@@ -598,7 +604,7 @@
     "explanation": ""
   },
   {
-    "index": 43,
+    "index": 44,
     "title": "What algorithm is used with IPsec to provide data confidentiality?",
     "image": null,
     "options": [
@@ -612,7 +618,7 @@
     "explanation": ""
   },
   {
-    "index": 44,
+    "index": 45,
     "title": "Which two technologies provide enterprise-managed VPN solutions? (Choose two.)",
     "image": null,
     "options": [
@@ -629,7 +635,7 @@
     "explanation": ""
   },
   {
-    "index": 45,
+    "index": 46,
     "title": "Question as presented:",
     "image": "6~8/image-18.png",
     "options": [
@@ -640,7 +646,7 @@
     "explanation": ""
   },
   {
-    "index": 46,
+    "index": 47,
     "title": "Refer to the exhibit. A network administrator is viewing the output from the command show ip nat translations. Which statement correctly describes the NAT translation that is occurring on router RT2?​",
     "image": "6~8/image-19.png",
     "options": [
@@ -653,7 +659,7 @@
     "explanation": ""
   },
   {
-    "index": 47,
+    "index": 48,
     "title": "What type of address is 10.100.126.126?",
     "image": null,
     "options": [
@@ -664,7 +670,7 @@
     "explanation": ""
   },
   {
-    "index": 48,
+    "index": 49,
     "title": "Which type of VPN connects using the Transport Layer Security (TLS) feature?",
     "image": null,
     "options": [
@@ -677,7 +683,7 @@
     "explanation": ""
   },
   {
-    "index": 49,
+    "index": 50,
     "title": "Which two end points can be on the other side of an ASA site-to-site VPN configured using ASDM? (Choose two.)",
     "image": null,
     "options": [
@@ -694,7 +700,7 @@
     "explanation": ""
   },
   {
-    "index": 50,
+    "index": 51,
     "title": "Which protocol creates a virtual point-to-point connection to tunnel unencrypted traffic between Cisco routers from a variety of protocols?",
     "image": null,
     "options": [
@@ -707,7 +713,7 @@
     "explanation": ""
   },
   {
-    "index": 51,
+    "index": 52,
     "title": "What is a disadvantage when both sides of a communication use PAT?",
     "image": null,
     "options": [
@@ -720,7 +726,7 @@
     "explanation": ""
   },
   {
-    "index": 52,
+    "index": 53,
     "title": "What two addresses are specified in a static NAT configuration?",
     "image": null,
     "options": [
@@ -733,7 +739,7 @@
     "explanation": ""
   },
   {
-    "index": 53,
+    "index": 54,
     "title": "A company is considering updating the campus WAN connection. Which two WAN options are examples of the private WAN architecture? (Choose two.)",
     "image": null,
     "options": [
@@ -750,7 +756,7 @@
     "explanation": ""
   },
   {
-    "index": 54,
+    "index": 55,
     "title": "What type of address is 128.107.240.239?",
     "image": null,
     "options": [
@@ -761,7 +767,7 @@
     "explanation": ""
   },
   {
-    "index": 55,
+    "index": 56,
     "title": "Which type of VPN has both Layer 2 and Layer 3 implementations?",
     "image": null,
     "options": [
@@ -774,7 +780,7 @@
     "explanation": ""
   },
   {
-    "index": 56,
+    "index": 57,
     "title": "Refer to the exhibit. A network administrator has configured R2 for PAT. Why is the configuration incorrect?",
     "image": "6~8/image-20.png",
     "options": [
@@ -787,7 +793,7 @@
     "explanation": ""
   },
   {
-    "index": 57,
+    "index": 58,
     "title": "Match each component of a WAN connection to its description. (Not all options are used.)",
     "image": "6~8/image-21.png",
     "options": [
@@ -798,7 +804,7 @@
     "explanation": ""
   },
   {
-    "index": 58,
+    "index": 59,
     "title": "Which type of VPN allows multicast and broadcast traffic over a secure site-to-site VPN?",
     "image": null,
     "options": [
@@ -811,7 +817,7 @@
     "explanation": ""
   },
   {
-    "index": 59,
+    "index": 60,
     "title": "Match the steps with the actions that are involved when an internal host with IP address 192.168.10.10 attempts to send a packet to and external server at the IP address 209.165.200.254 across a router R1 that running dynamic NAT. (Not all options are used.)",
     "image": "6~8/image-22.png",
     "options": [
@@ -822,7 +828,7 @@
     "explanation": ""
   },
   {
-    "index": 60,
+    "index": 61,
     "title": "Which type of VPN involves passenger, carrier, and transport protocols?",
     "image": null,
     "options": [
@@ -835,7 +841,7 @@
     "explanation": ""
   },
   {
-    "index": 61,
+    "index": 62,
     "title": "Match the steps with the actions that are involved when an internal host with IP address 192.168.10.10 attempts to send a packet to an external server at the IP address 209.165.200.254 across a router R1 that is running dynamic NAT. (Not all options are used.)",
     "image": "6~8/image-23.png",
     "options": [
@@ -846,7 +852,7 @@
     "explanation": ""
   },
   {
-    "index": 62,
+    "index": 63,
     "title": "Refer to the exhibit. A network administrator is viewing the output from the command show ip nat translations . Which statement correctly describes the NAT translation that is occurring on router RT2?​",
     "image": "6~8/image-24.png",
     "options": [
@@ -859,7 +865,7 @@
     "explanation": ""
   },
   {
-    "index": 63,
+    "index": 64,
     "title": "What type of address is 10.131.48.7?",
     "image": null,
     "options": [
@@ -870,7 +876,7 @@
     "explanation": ""
   },
   {
-    "index": 64,
+    "index": 65,
     "title": "Which type of VPN supports multiple sites by applying configurations to virtual interfaces instead of physical interfaces?",
     "image": null,
     "options": [
@@ -883,7 +889,7 @@
     "explanation": ""
   },
   {
-    "index": 65,
+    "index": 66,
     "title": "Which type of VPN involves a nonsecure tunneling protocol being encapsulated by IPsec?",
     "image": null,
     "options": [
@@ -896,7 +902,7 @@
     "explanation": ""
   },
   {
-    "index": 66,
+    "index": 67,
     "title": "What type of address is 10.19.6.7?",
     "image": null,
     "options": [
@@ -907,7 +913,7 @@
     "explanation": ""
   },
   {
-    "index": 67,
+    "index": 68,
     "title": "What type of address is 64.101.198.197?",
     "image": null,
     "options": [
@@ -918,7 +924,7 @@
     "explanation": ""
   },
   {
-    "index": 68,
+    "index": 69,
     "title": "What type of address is 64.101.198.107",
     "image": null,
     "options": [
@@ -929,7 +935,7 @@
     "explanation": ""
   },
   {
-    "index": 69,
+    "index": 70,
     "title": "What type of address is 10.100.34.34?",
     "image": null,
     "options": [
@@ -940,7 +946,7 @@
     "explanation": ""
   },
   {
-    "index": 70,
+    "index": 71,
     "title": "What type of address is 192.168.7.126?",
     "image": null,
     "options": [
@@ -951,7 +957,7 @@
     "explanation": ""
   },
   {
-    "index": 71,
+    "index": 72,
     "title": "What type of address is 198.133.219.148?",
     "image": null,
     "options": [
@@ -962,7 +968,7 @@
     "explanation": ""
   },
   {
-    "index": 72,
+    "index": 73,
     "title": "Which two end points can be on the other side of an ASA site-to-site VPN? (Choose two.)",
     "image": null,
     "options": [
@@ -979,7 +985,7 @@
     "explanation": ""
   },
   {
-    "index": 73,
+    "index": 74,
     "title": "What type of address is 192.168.7.98?",
     "image": null,
     "options": [
